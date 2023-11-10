@@ -22,7 +22,7 @@ public class LoginDriver {
         this.db = db;
     } 
             
-            
+    //validacion de prueba para el login usando el ArrayList
     public boolean validaLogin (String runUsuario, String contraseña, DataBase db){
          ArrayList<Usuario> usuarios = db.getUsuarios();
          
@@ -36,6 +36,4 @@ public class LoginDriver {
             }
         }
     return false;}
-
-    
 }

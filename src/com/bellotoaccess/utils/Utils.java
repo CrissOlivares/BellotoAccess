@@ -11,7 +11,7 @@ import javax.swing.JTextField;
  * @author Cristian Olivares
  */
 public class Utils {
-    
+    //metodo que genera el icono en el launcher de java
     private static final String RUTA_CAMINO_FRAME = "/com/bellotoaccess/imag/log1.png";
         public static void cambiarIconoFrame (JFrame frame){
             try {
@@ -21,6 +21,7 @@ public class Utils {
            ImageIcon icono = new ImageIcon();
             frame.setIconImage(icono.getImage()); }
         }
+        
     public static String obtenerInput(JTextField campo){
         return campo.getText();
     }
