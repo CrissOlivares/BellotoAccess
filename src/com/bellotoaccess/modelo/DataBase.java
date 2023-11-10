@@ -51,6 +51,12 @@ public class DataBase {
         this.colecciones = colecciones;
     }
    
+    //metodos customers
+    
+   
+    
+    
+    
     /**
      * Metodos que agregan datos dummy como simulacion de una base de datos
      */
@@ -68,6 +74,10 @@ public class DataBase {
     this.colecciones.add("Propietario");
     this.colecciones.add("Usuario");
     }
+    
+    
+    
+    
 }
 
 

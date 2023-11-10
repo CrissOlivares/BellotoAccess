@@ -132,15 +132,15 @@
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jButton1" min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="jButton1_ingresar" min="-2" pref="133" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="jButton2_registrarse" min="-2" pref="133" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel4" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" pref="113" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jTxt_contraseña" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTxt_contrasena" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTxt_runUsuario" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -162,11 +162,11 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTxt_contraseña" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxt_contrasena" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jButton1_ingresar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jButton2_registrarse" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="78" max="32767" attributes="0"/>
               </Group>
@@ -202,7 +202,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxt_runUsuarioActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxt_contrase&#xf1;a">
+        <Component class="javax.swing.JTextField" name="jTxt_contrasena">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -216,7 +216,7 @@
             <Property name="text" type="java.lang.String" value="*********************"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxt_contrase&#xf1;aActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxt_contrasenaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -230,7 +230,7 @@
             <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="jButton1_ingresar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="64" green="96" red="2" type="rgb"/>
@@ -244,7 +244,7 @@
             <Property name="text" type="java.lang.String" value="INGRESAR"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1_ingresarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
@@ -271,7 +271,7 @@
             <Property name="text" type="java.lang.String" value="Inicia sesi&#xf3;n con tus credenciales"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="jButton2_registrarse">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -285,7 +285,7 @@
             <Property name="text" type="java.lang.String" value="REGISTRARSE"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2_registrarseActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

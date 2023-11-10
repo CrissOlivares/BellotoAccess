@@ -1,6 +1,7 @@
 
 package com.bellotoaccess.utils;
 
+import com.bellotoaccess.modelo.DataBase;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -20,8 +21,9 @@ public class Utils {
            ImageIcon icono = new ImageIcon();
             frame.setIconImage(icono.getImage()); }
         }
-    private String obtenerInput(JTextField campo){
+    public static String obtenerInput(JTextField campo){
         return campo.getText();
     }
  
+     
 }

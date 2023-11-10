@@ -4,6 +4,7 @@
  */
 package com.bellotoaccess.vista;
 
+import com.bellotoaccess.controlador.LoginDriver;
 import com.bellotoaccess.modelo.DataBase;
 import com.bellotoaccess.utils.Utils;
 import javax.swing.JTextField;
@@ -44,12 +45,12 @@ public class JF_LoginBA extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTxt_runUsuario = new javax.swing.JTextField();
-        jTxt_contraseña = new javax.swing.JTextField();
+        jTxt_contrasena = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButton1_ingresar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jButton2_registrarse = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BellotoAccess - Sistema administrativo de Condominios");
@@ -117,13 +118,13 @@ public class JF_LoginBA extends javax.swing.JFrame {
             }
         });
 
-        jTxt_contraseña.setBackground(new java.awt.Color(255, 255, 255));
-        jTxt_contraseña.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jTxt_contraseña.setForeground(new java.awt.Color(153, 153, 153));
-        jTxt_contraseña.setText("*********************");
-        jTxt_contraseña.addActionListener(new java.awt.event.ActionListener() {
+        jTxt_contrasena.setBackground(new java.awt.Color(255, 255, 255));
+        jTxt_contrasena.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
+        jTxt_contrasena.setForeground(new java.awt.Color(153, 153, 153));
+        jTxt_contrasena.setText("*********************");
+        jTxt_contrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxt_contraseñaActionPerformed(evt);
+                jTxt_contrasenaActionPerformed(evt);
             }
         });
 
@@ -131,13 +132,13 @@ public class JF_LoginBA extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(53, 91, 62));
         jLabel4.setText("Contraseña:");
 
-        jButton1.setBackground(new java.awt.Color(2, 150, 100));
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INGRESAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1_ingresar.setBackground(new java.awt.Color(2, 150, 100));
+        jButton1_ingresar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jButton1_ingresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1_ingresar.setText("INGRESAR");
+        jButton1_ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton1_ingresarActionPerformed(evt);
             }
         });
 
@@ -151,13 +152,13 @@ public class JF_LoginBA extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Inicia sesión con tus credenciales");
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(2, 150, 100));
-        jButton2.setText("REGISTRARSE");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton2_registrarse.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2_registrarse.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jButton2_registrarse.setForeground(new java.awt.Color(2, 150, 100));
+        jButton2_registrarse.setText("REGISTRARSE");
+        jButton2_registrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton2_registrarseActionPerformed(evt);
             }
         });
 
@@ -172,13 +173,13 @@ public class JF_LoginBA extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jTxt_contraseña)
+                        .addComponent(jTxt_contrasena)
                         .addComponent(jTxt_runUsuario)))
                 .addContainerGap(122, Short.MAX_VALUE))
         );
@@ -196,11 +197,11 @@ public class JF_LoginBA extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTxt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTxt_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
@@ -214,21 +215,19 @@ public class JF_LoginBA extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTxt_runUsuarioActionPerformed
 
-    private void jTxt_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxt_contraseñaActionPerformed
+    private void jTxt_contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxt_contrasenaActionPerformed
         
-    }//GEN-LAST:event_jTxt_contraseñaActionPerformed
+    }//GEN-LAST:event_jTxt_contrasenaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_ingresarActionPerformed
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton1_ingresarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2_registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_registrarseActionPerformed
        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton2_registrarseActionPerformed
     //Metodos Customizados
-    private String obtenerInput(JTextField campo){
-        return campo.getText();
-    }
+
     
     
     
@@ -270,8 +269,8 @@ public class JF_LoginBA extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton1_ingresar;
+    private javax.swing.JButton jButton2_registrarse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -281,7 +280,7 @@ public class JF_LoginBA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTxt_contraseña;
+    private javax.swing.JTextField jTxt_contrasena;
     private javax.swing.JTextField jTxt_runUsuario;
     // End of variables declaration//GEN-END:variables
 }
