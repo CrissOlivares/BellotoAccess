@@ -3,7 +3,9 @@ package com.bellotoaccess.controlador;
 
 import com.bellotoaccess.modelo.DataBase;
 import com.bellotoaccess.modelo.Usuario;
+import com.bellotoaccess.vista.Principal;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,9 +33,20 @@ public class LoginDriver {
                  JOptionPane.showMessageDialog(null, "Ingresando...", "Información",JOptionPane.INFORMATION_MESSAGE );
                  return true;
              } else{
-                 JOptionPane.showMessageDialog(null, "Run o Contraseña incorrectas", "Información",JOptionPane.WARNING_MESSAGE); 
+                 JOptionPane.showMessageDialog(null, "Run o contraseña incorrecta.", "Información",JOptionPane.WARNING_MESSAGE); 
                  return false;
             }
         }
-    return false;}
+    return false;
+    }
+    
+    public void redirigirLogin (JFrame frame, DataBase db, boolean estado  ){
+        
+        if (estado) {
+        }       
+        frame.dispose();
+        Principal vp = new Principal(db);
+        vp.setVisible(true);
+    }
+    
 }

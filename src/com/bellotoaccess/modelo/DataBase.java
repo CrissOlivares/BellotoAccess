@@ -63,10 +63,11 @@ public class DataBase {
     this.personas.add(new Persona("11507568-3","Victoria","Castilo",203,1, 975751605,"vic.castillo@duocuc.cl","Arrendatario",true));
     this.personas.add(new Persona("14998344-k","Jordan","Robles",304,2, 986861709,"jor.robles@duocuc.cl","Propietario",true));
         //añadir usuario
+    this.usuarios.add(new Usuario(4,"19770359-8", "Cristian", "Olivares", "cris123"));    
     this.usuarios.add(new Usuario(1,"16667556-2", "Carlos", "tapia", "carlos123"));
     this.usuarios.add(new Usuario(2,"19990459-7","Fabian","Contreras","fabian123"));
     this.usuarios.add(new Usuario(3,"20876321-2","Yasna","Herrera","yasi443"));
-    this.usuarios.add(new Usuario(4,"19770359-8", "Cristian", "Olivares", "cris123"));
+    
     
         //añadir colecciones
     this.colecciones.add("Arrendatario");
