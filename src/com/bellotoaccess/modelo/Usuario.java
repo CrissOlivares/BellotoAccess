@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.bellotoaccess.modelo;
 
 /**
@@ -9,6 +6,7 @@ package com.bellotoaccess.modelo;
  * @author Cristian Olivares
  */
 public class Usuario {
+    private int id;
     private String run;
     private String nombre, apellido;
     private String contraseña;
@@ -16,14 +14,22 @@ public class Usuario {
     public Usuario() {
     }
 
-        //constructor
-    public Usuario(String run, String nombre, String apellido, String contraseña) {
+    public Usuario(int id, String run, String nombre, String apellido, String contraseña) {
+        this.id = id;
         this.run = run;
         this.nombre = nombre;
         this.apellido = apellido;
         this.contraseña = contraseña;
     }
-    //getter and setter
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getRun() {
         return run;
     }
@@ -55,22 +61,19 @@ public class Usuario {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    //toString
+
     @Override
     public String toString() {
-        return "Usuario{" + "run=" + run + ", nombre=" + nombre + ", apellido=" + apellido + ", contrase\u00f1a=" + contraseña + '}';
+        return "Usuario{" + "id=" + id + ", run=" + run + ", nombre=" + nombre + ", apellido=" + apellido + ", contrase\u00f1a=" + contraseña + '}';
     }
     
-        public void imprimirDetalleUsuario(){
-        System.out.println(
+    public void imprimirDetalleUsuario(){
+        System.out.println("codigo: "+id+"\n" +
                 "Run: "+run+"\n" +
                 "Nombre : "+nombre+"\n" +        
                 "Apellido: "+apellido+"\n" +
-                "Contraseña: "+ contraseña+"\n"
-        );  
-        
+                "Contraseña: "+ contraseña+"\n");
     }
-    
     
 }
 

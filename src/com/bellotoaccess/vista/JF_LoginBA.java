@@ -215,9 +215,8 @@ public class JF_LoginBA extends javax.swing.JFrame {
 
     private void jButton1_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_ingresarActionPerformed
          LoginDriver ld = new LoginDriver(db);
-        String runUsuario = Utils.obtenerInput(jTxt_runUsuario);
-        String contrasena = Utils.obtenerInput(jPasswordField2_contrasena);
-        ld.validaLogin(runUsuario, contrasena, db);
+      
+        ld.validaLogin(Utils.obtenerInput(jTxt_runUsuario), (Utils.obtenerPassword(jPasswordField2_contrasena)), db);
     }//GEN-LAST:event_jButton1_ingresarActionPerformed
 
     private void jButton2_registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_registrarseActionPerformed

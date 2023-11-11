@@ -4,6 +4,7 @@ package com.bellotoaccess.utils;
 import com.bellotoaccess.modelo.DataBase;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -12,7 +13,7 @@ import javax.swing.JTextField;
  */
 public class Utils {
     //metodo que genera el icono en el launcher de java
-    private static final String RUTA_CAMINO_FRAME = "/com/bellotoaccess/imag/log1.png";
+    private static final String RUTA_CAMINO_FRAME = "/com/bellotoaccess/imag/B.png";
         public static void cambiarIconoFrame (JFrame frame){
             try {
                 ImageIcon icono = new ImageIcon(Utils.class.getResource(RUTA_CAMINO_FRAME));
@@ -23,8 +24,10 @@ public class Utils {
         }
         
     public static String obtenerInput(JTextField campo){
-        return campo.getText();
+        return campo.getText();//getText es para run email etc
     }
- 
+    public static String obtenerPassword (JPasswordField campo){
+        return String.valueOf(campo.getPassword());
+    }
      
 }
