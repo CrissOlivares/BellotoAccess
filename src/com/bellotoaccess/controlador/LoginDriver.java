@@ -23,11 +23,11 @@ public class LoginDriver {
     } 
             
     //validacion de prueba para el login usando el ArrayList
-    public boolean validaLogin (String runUsuario, String contraseña, DataBase db){
+    public boolean validaLogin (String runUsuario, String contrasena, DataBase db){
          ArrayList<Usuario> usuarios = db.getUsuarios();
          
          for (Usuario usuario : usuarios) {
-             if (usuario.getRun().equalsIgnoreCase(runUsuario) && usuario.getContraseña().equals(contraseña) ){
+             if (usuario.getRun().equalsIgnoreCase(runUsuario) && usuario.getContraseña().equals(contrasena) ){
                  JOptionPane.showMessageDialog(null, "Ingresando...", "Información",JOptionPane.INFORMATION_MESSAGE );
                  return true;
              } else{

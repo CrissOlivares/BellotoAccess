@@ -7,6 +7,7 @@ package com.bellotoaccess.vista;
 import com.bellotoaccess.controlador.LoginDriver;
 import com.bellotoaccess.modelo.DataBase;
 import com.bellotoaccess.utils.Utils;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -43,14 +44,14 @@ public class JF_LoginBA extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel3_textoContrasena = new javax.swing.JLabel();
         jTxt_runUsuario = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jButton1_ingresar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton2_registrarse = new javax.swing.JButton();
         jPasswordField2_contrasena = new javax.swing.JPasswordField();
+        jLabel5_textorunUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BellotoAccess - Sistema administrativo de Condominios");
@@ -104,9 +105,9 @@ public class JF_LoginBA extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(53, 91, 62));
-        jLabel3.setText("Run usuario:");
+        jLabel3_textoContrasena.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel3_textoContrasena.setForeground(new java.awt.Color(53, 91, 62));
+        jLabel3_textoContrasena.setText("Contraseña:");
 
         jTxt_runUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jTxt_runUsuario.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
@@ -117,10 +118,6 @@ public class JF_LoginBA extends javax.swing.JFrame {
                 jTxt_runUsuarioActionPerformed(evt);
             }
         });
-
-        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(53, 91, 62));
-        jLabel4.setText("Contraseña:");
 
         jButton1_ingresar.setBackground(new java.awt.Color(2, 150, 100));
         jButton1_ingresar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -159,24 +156,28 @@ public class JF_LoginBA extends javax.swing.JFrame {
             }
         });
 
+        jLabel5_textorunUsuario.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel5_textorunUsuario.setForeground(new java.awt.Color(53, 91, 62));
+        jLabel5_textorunUsuario.setText("Run usuario:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTxt_runUsuario)
-                    .addComponent(jPasswordField2_contrasena))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5_textorunUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel8)
+                        .addComponent(jLabel6)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3_textoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTxt_runUsuario)
+                        .addComponent(jPasswordField2_contrasena)))
                 .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -186,19 +187,19 @@ public class JF_LoginBA extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
-                .addGap(80, 80, 80)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(56, 56, 56)
+                .addComponent(jLabel5_textorunUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTxt_runUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel3_textoContrasena)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordField2_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 550));
@@ -208,11 +209,15 @@ public class JF_LoginBA extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTxt_runUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxt_runUsuarioActionPerformed
+      
         
     }//GEN-LAST:event_jTxt_runUsuarioActionPerformed
 
     private void jButton1_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_ingresarActionPerformed
-       
+         LoginDriver ld = new LoginDriver(db);
+        String runUsuario = Utils.obtenerInput(jTxt_runUsuario);
+        String contrasena = Utils.obtenerInput(jPasswordField2_contrasena);
+        ld.validaLogin(runUsuario, contrasena, db);
     }//GEN-LAST:event_jButton1_ingresarActionPerformed
 
     private void jButton2_registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_registrarseActionPerformed
@@ -268,8 +273,8 @@ public class JF_LoginBA extends javax.swing.JFrame {
     private javax.swing.JButton jButton1_ingresar;
     private javax.swing.JButton jButton2_registrarse;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3_textoContrasena;
+    private javax.swing.JLabel jLabel5_textorunUsuario;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
