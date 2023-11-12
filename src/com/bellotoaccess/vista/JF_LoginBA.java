@@ -1,12 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.bellotoaccess.vista;
 
 import com.bellotoaccess.controlador.LoginDriver;
 import com.bellotoaccess.modelo.DataBase;
 import com.bellotoaccess.utils.Utils;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -113,10 +112,14 @@ public class JF_LoginBA extends javax.swing.JFrame {
         jTxt_runUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jTxt_runUsuario.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
         jTxt_runUsuario.setForeground(new java.awt.Color(153, 153, 153));
-        jTxt_runUsuario.setText("Ej: 18770559-2");
         jTxt_runUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTxt_runUsuarioActionPerformed(evt);
+            }
+        });
+        jTxt_runUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTxt_runUsuarioKeyPressed(evt);
             }
         });
 
@@ -150,10 +153,14 @@ public class JF_LoginBA extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField2_contrasena.setText("jPasswordField2");
         jPasswordField2_contrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField2_contrasenaActionPerformed(evt);
+            }
+        });
+        jPasswordField2_contrasena.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField2_contrasenaKeyPressed(evt);
             }
         });
 
@@ -215,7 +222,12 @@ public class JF_LoginBA extends javax.swing.JFrame {
     }//GEN-LAST:event_jTxt_runUsuarioActionPerformed
 
     private void jButton1_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_ingresarActionPerformed
-         LoginDriver ld = new LoginDriver(db);
+        String password = String.valueOf(jPasswordField2_contrasena.getPassword());
+        if (jTxt_runUsuario.getText().isEmpty() && password.isEmpty()) {
+            JOptionPane.showInternalConfirmDialog(null, "Ingrese sus credenciales.", "Error de ingreso", JOptionPane.WARNING_MESSAGE);
+        } else {
+        }
+        LoginDriver ld = new LoginDriver(db);
         ld.redirigirLogin(this, db, ld.validaLogin(Utils.obtenerInput(jTxt_runUsuario), (Utils.obtenerPassword(jPasswordField2_contrasena)), db));
   
     }//GEN-LAST:event_jButton1_ingresarActionPerformed
@@ -227,6 +239,19 @@ public class JF_LoginBA extends javax.swing.JFrame {
     private void jPasswordField2_contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2_contrasenaActionPerformed
        
     }//GEN-LAST:event_jPasswordField2_contrasenaActionPerformed
+
+    private void jTxt_runUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxt_runUsuarioKeyPressed
+        //hace que al dar enter se simule un click
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jButton1_ingresar.doClick();
+        }    
+    }//GEN-LAST:event_jTxt_runUsuarioKeyPressed
+
+    private void jPasswordField2_contrasenaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField2_contrasenaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jButton1_ingresar.doClick();
+        } 
+    }//GEN-LAST:event_jPasswordField2_contrasenaKeyPressed
     //Metodos Customizados
 
     

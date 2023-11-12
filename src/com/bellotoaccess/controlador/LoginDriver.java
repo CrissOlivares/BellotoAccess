@@ -42,11 +42,9 @@ public class LoginDriver {
     
     public void redirigirLogin (JFrame frame, DataBase db, boolean estado  ){
         
-        if (estado) {
-        }       
-        frame.dispose();
+        if (estado == true) {frame.dispose();
         Principal vp = new Principal(db);
         vp.setVisible(true);
+        }     
     }
-    
 }
