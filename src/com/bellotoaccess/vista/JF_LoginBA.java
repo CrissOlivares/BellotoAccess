@@ -225,10 +225,10 @@ public class JF_LoginBA extends javax.swing.JFrame {
         String password = String.valueOf(jPasswordField2_contrasena.getPassword());
         if (jTxt_runUsuario.getText().isEmpty() && password.isEmpty()) {
             JOptionPane.showInternalConfirmDialog(null, "Ingrese sus credenciales.", "Error de ingreso", JOptionPane.WARNING_MESSAGE);
-        } else {
-        }
-        LoginDriver ld = new LoginDriver(db);
+        } else { LoginDriver ld = new LoginDriver(db);
         ld.redirigirLogin(this, db, ld.validaLogin(Utils.obtenerInput(jTxt_runUsuario), (Utils.obtenerPassword(jPasswordField2_contrasena)), db));
+        }
+       
   
     }//GEN-LAST:event_jButton1_ingresarActionPerformed
 
