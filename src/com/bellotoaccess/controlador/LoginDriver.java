@@ -3,7 +3,7 @@ package com.bellotoaccess.controlador;
 
 import com.bellotoaccess.modelo.DataBase;
 import com.bellotoaccess.modelo.Usuario;
-import com.bellotoaccess.vista.Principal;
+import com.bellotoaccess.vista.MenuInicial;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -30,7 +30,7 @@ public class LoginDriver {
          
          for (Usuario usuario : usuarios) {
              if (usuario.getRun().equalsIgnoreCase(runUsuario) && usuario.getContraseña().equals(contrasena) ){
-                 JOptionPane.showMessageDialog(null, "Ingresando...", "Información",JOptionPane.INFORMATION_MESSAGE );
+                 //aqui va para mostrar un mensaje de que estas entrando : JOptionPane.showMessageDialog(null, "Ingresando...", "Información",JOptionPane.INFORMATION_MESSAGE );
                  return true;
              } else{
                  JOptionPane.showMessageDialog(null, "Run o contraseña incorrecta.", "Información",JOptionPane.WARNING_MESSAGE); 
@@ -42,7 +42,7 @@ public class LoginDriver {
     
     public void redirigirLogin (JFrame frame, DataBase db, boolean estado  ){
         if (estado) {frame.dispose();
-        Principal vp = new Principal(db);
+        MenuInicial vp = new MenuInicial(db);
         vp.setVisible(true);
         }     
     }
