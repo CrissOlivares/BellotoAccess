@@ -2,8 +2,11 @@
 package com.bellotoaccess.utils;
 
 import com.bellotoaccess.modelo.DataBase;
+import com.bellotoaccess.vista.Login;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -30,5 +33,45 @@ public class Utils {
         return String.valueOf(campo.getPassword());
     }
      
-    
+    public static void cambiarPanel(JFrame frame, JPanel panelPadre,JPanel boton,JPanel panelHijo){
+        
+        
+        switch (boton.getName()) {
+            case "jBtn_limp_buscar":
+                limpiarPanelPadre(panelPadre);
+                activarPanelHijo(panelHijo, panelPadre);
+                
+                break;   
+            case "jBtn_limp_modificar":
+                limpiarPanelPadre(panelPadre);
+                activarPanelHijo(panelHijo, panelPadre);
+                
+                break;    
+            case "JBtn_cerrarSesion":
+                int respuesta = JOptionPane.showConfirmDialog(null, "¿Cerrar Sesión?", "Salir", 2, JOptionPane.YES_NO_OPTION);
+                if (respuesta == JOptionPane.YES_NO_OPTION){
+                    frame.dispose();
+                    Login login = new Login();
+                    login.setVisible(true);
+                }
+                
+                break;  
+            default:    
+                throw new AssertionError();
+        }
+    }
+   //resetea el panel padre
+    public static void limpiarPanelPadre(JPanel panel){
+        panel.removeAll();
+    }
+    //Activar PanelHijo 
+    public static void activarPanelHijo(JPanel panelHijo, JPanel panelPadre){
+        panelPadre.add(panelHijo);
+        panelPadre.repaint();
+        panelPadre.revalidate();
+        
+        //set del boton
+        
+    }
+
 }

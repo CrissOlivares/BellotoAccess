@@ -101,7 +101,7 @@ public class Login extends javax.swing.JFrame {
 
         jTxt_runUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jTxt_runUsuario.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jTxt_runUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        jTxt_runUsuario.setForeground(new java.awt.Color(102, 102, 102));
         jTxt_runUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTxt_runUsuarioActionPerformed(evt);
