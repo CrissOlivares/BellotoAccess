@@ -43,10 +43,10 @@ public class MenuInicial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BellotoAccess - Sistema administrativo de Condominios");
 
-        jPanel2.setBackground(new java.awt.Color(245, 219, 196));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1_ingresar.setBackground(new java.awt.Color(245, 219, 196));
+        jButton1_ingresar.setBackground(new java.awt.Color(255, 255, 255));
         jButton1_ingresar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jButton1_ingresar.setForeground(new java.awt.Color(53, 91, 62));
         jButton1_ingresar.setText("BUSCAR");
@@ -64,7 +64,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 49, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(245, 236, 228));
 
         jTxt_runUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jTxt_runUsuario.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
@@ -99,7 +99,7 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 900, 510));
 
-        jButton1_ingresar1.setBackground(new java.awt.Color(245, 219, 196));
+        jButton1_ingresar1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1_ingresar1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jButton1_ingresar1.setForeground(new java.awt.Color(53, 91, 62));
         jButton1_ingresar1.setText("ELIMINAR");
@@ -111,7 +111,7 @@ public class MenuInicial extends javax.swing.JFrame {
         });
         jPanel2.add(jButton1_ingresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 147, 25));
 
-        jButton1_ingresar2.setBackground(new java.awt.Color(245, 219, 196));
+        jButton1_ingresar2.setBackground(new java.awt.Color(255, 255, 255));
         jButton1_ingresar2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jButton1_ingresar2.setForeground(new java.awt.Color(53, 91, 62));
         jButton1_ingresar2.setText("AÑADIR");
@@ -124,7 +124,7 @@ public class MenuInicial extends javax.swing.JFrame {
         });
         jPanel2.add(jButton1_ingresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 147, 25));
 
-        jButton1_ingresar3.setBackground(new java.awt.Color(245, 219, 196));
+        jButton1_ingresar3.setBackground(new java.awt.Color(255, 255, 255));
         jButton1_ingresar3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jButton1_ingresar3.setForeground(new java.awt.Color(53, 91, 62));
         jButton1_ingresar3.setText("MODIFICAR");
