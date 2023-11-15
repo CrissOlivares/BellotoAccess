@@ -39,7 +39,7 @@ public class LoginDriver {
         }
     return false;
     }
-    
+    //Te envia al menu principal
     public void redirigirLogin (JFrame frame, DataBase db, boolean estado  ){
         if (estado) {frame.dispose();
         MenuInicial vp = new MenuInicial(db);

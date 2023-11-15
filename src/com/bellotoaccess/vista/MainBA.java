@@ -9,7 +9,16 @@ import com.bellotoaccess.modelo.Usuario;
 
 
 public class MainBA {
+ 
     public static void main(String[] args) {
+        //ejecutar el proyecto
+        Login login = new Login();
+        login.setVisible(true);
+        //se ejecuta en el centro
+        login.setLocationRelativeTo(null);
+        
+        
+        
         DataBase db = new DataBase();
         //imprime la base de datos de las personas 
         for (Persona personas : db.getPersonas()) {

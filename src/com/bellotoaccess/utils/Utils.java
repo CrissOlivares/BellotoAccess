@@ -4,6 +4,7 @@ package com.bellotoaccess.utils;
 import com.bellotoaccess.modelo.DataBase;
 import com.bellotoaccess.vista.Login;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -33,7 +34,7 @@ public class Utils {
         return String.valueOf(campo.getPassword());
     }
      
-    public static void cambiarPanel(JFrame frame, JPanel panelPadre,JPanel boton,JPanel panelHijo){
+    public static void cambiarPanel(JFrame frame, JPanel panelPadre,JButton boton,JPanel panelHijo){
         
         
         switch (boton.getName()) {
