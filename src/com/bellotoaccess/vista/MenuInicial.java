@@ -174,7 +174,7 @@ public class MenuInicial extends javax.swing.JFrame {
         JLbl_MenPrincipal3.setForeground(new java.awt.Color(255, 255, 255));
         JLbl_MenPrincipal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLbl_MenPrincipal3.setLabelFor(JBtn_Buscar);
-        JLbl_MenPrincipal3.setText("TEXTOEJEMPLO");
+        JLbl_MenPrincipal3.setText("Cristian Olivares");
 
         JLbl_MenPrincipal4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         JLbl_MenPrincipal4.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,11 +188,11 @@ public class MenuInicial extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addComponent(JLbl_MenPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170)
-                .addComponent(JLbl_MenPrincipal3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 523, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addComponent(JLbl_IconoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(76, 76, 76)
+                .addComponent(JLbl_MenPrincipal3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(620, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(170, 170, 170)
@@ -208,7 +208,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLbl_MenPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JLbl_MenPrincipal3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(JLbl_MenPrincipal3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()

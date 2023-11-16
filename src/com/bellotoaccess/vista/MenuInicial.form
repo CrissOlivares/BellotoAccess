@@ -253,11 +253,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="JLbl_MenPrincipal" min="-2" pref="148" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                      <Component id="JLbl_MenPrincipal3" min="-2" pref="148" max="-2" attributes="0"/>
-                      <EmptySpace pref="523" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="JLbl_IconoUsuario" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      <Component id="JLbl_MenPrincipal3" min="-2" pref="148" max="-2" attributes="0"/>
+                      <EmptySpace pref="620" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -278,7 +278,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="JLbl_MenPrincipal" max="32767" attributes="0"/>
-                          <Component id="JLbl_MenPrincipal3" alignment="1" max="32767" attributes="0"/>
+                          <Component id="JLbl_MenPrincipal3" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -327,7 +327,7 @@
                 <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                   <ComponentRef name="JBtn_Buscar"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="TEXTOEJEMPLO"/>
+                <Property name="text" type="java.lang.String" value="Cristian Olivares"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="JLbl_MenPrincipal4">

@@ -19,15 +19,15 @@ public class MainBA {
         
         
         
-        DataBase db = new DataBase();
-        //imprime la base de datos de las personas 
-        for (Persona personas : db.getPersonas()) {
-            personas.imprimirDetallePersona();
-        }
-        System.out.println("**************************************");
-        //aqui imprime la base de datos de los usuarios
-        for (Usuario usuarios : db.getUsuarios()){
-            usuarios.imprimirDetalleUsuario();  
-        }
+//        DataBase db = new DataBase();
+//        //imprime la base de datos de las personas 
+//        for (Persona personas : db.getPersonas()) {
+//            personas.imprimirDetallePersona();
+//        }
+//        System.out.println("**************************************");
+//        //aqui imprime la base de datos de los usuarios
+//        for (Usuario usuarios : db.getUsuarios()){
+//            usuarios.imprimirDetalleUsuario();  
+//        }
     }
 }
