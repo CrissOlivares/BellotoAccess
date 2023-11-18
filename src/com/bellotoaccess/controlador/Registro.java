@@ -22,15 +22,17 @@ public class Registro {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
             
-            date = arrendatario.get.fecha();
+            date = arrendatario.getFecha();
             
-            String query = "insert into libro(titulo,autor,publicacion,precio,disponible) values(?,?,?,?,?)";
+            String query = "insert into arrendatario(numdept,run,nombre,apellido,email,telef,fecha) values(?,?,?,?,?,?,?)";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setString(1, persona.getTitulo());
-            stmt.setString(2, persona.getAutor());
-            stmt.setDate(3, new java.sql.Date(date.getTime()));
-            stmt.setInt(4,persona.getPrecio());
-            stmt.setBoolean(5,persona.isDisponible());
+            stmt.setInt(1, arrendatario.getNumdept());
+            stmt.setString(2, arrendatario.getApellido());
+            stmt.setString(3,arrendatario.getNombre());
+            stmt.setString(4,arrendatario.getApellido());
+            stmt.setString(5,arrendatario.getEmail());
+            stmt.setInt(6,arrendatario.getTelef());    
+            stmt.setDate(7, new java.sql.Date(date.getTime()));
             
             stmt.executeUpdate();
             stmt.close();
@@ -39,7 +41,7 @@ public class Registro {
             return true;
             
         } catch (SQLException e) {
-            System.out.println("Error SQL al agregar Libro " + e.getMessage() );
+            System.out.println("Error SQL al agregar Arrendatario " + e.getMessage() );
             return false;
         }
     }
