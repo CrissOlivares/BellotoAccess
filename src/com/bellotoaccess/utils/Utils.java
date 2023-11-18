@@ -1,7 +1,7 @@
 
 package com.bellotoaccess.utils;
 
-import com.bellotoaccess.modelo.DataBase;
+import com.bellotoaccess.modelo.DataBaseForTest;
 import com.bellotoaccess.vista.Login;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;

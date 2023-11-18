@@ -7,14 +7,14 @@ import java.util.ArrayList;
  *
  * @author Cristian Olivares
  */
-public class DataBase {
+public class DataBaseForTest {
     //simulacion de base de datos (BORRAR)
     private ArrayList<Persona> personas;
     private ArrayList<Usuario> usuarios;
     private ArrayList<String> colecciones;
     
     //constructor 
-    public DataBase(){
+    public DataBaseForTest(){
         this.personas = new ArrayList<>();
         this.usuarios = new ArrayList<>();
         this.colecciones = new ArrayList<>();

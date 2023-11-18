@@ -2,7 +2,7 @@
 package com.bellotoaccess.vista;
 
 import com.bellotoaccess.controlador.LoginDriver;
-import com.bellotoaccess.modelo.DataBase;
+import com.bellotoaccess.modelo.DataBaseForTest;
 import com.bellotoaccess.utils.Utils;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
@@ -15,13 +15,13 @@ import javax.swing.JTextField;
  */
 public class Login extends javax.swing.JFrame {
 
-    private DataBase db;
+    private DataBaseForTest db;
     //Constructor de interfaz LOGIN
     public Login() {
         initComponents();
         Utils.cambiarIconoFrame(this);
         
-        this.db = new DataBase();
+        this.db = new DataBaseForTest();
         db.getUsuarios();
     }
 

@@ -3,7 +3,7 @@ package com.bellotoaccess.vista;
 //author Cristian Olivares
 //IMPORTS
 import com.bellotoaccess.modelo.Persona;
-import com.bellotoaccess.modelo.DataBase;
+import com.bellotoaccess.modelo.DataBaseForTest;
 import com.bellotoaccess.modelo.Usuario;
 
 
@@ -19,7 +19,7 @@ public class MainBA {
         
         
         
-//        DataBase db = new DataBase();
+//        DataBaseForTest db = new DataBaseForTest();
 //        //imprime la base de datos de las personas 
 //        for (Persona personas : db.getPersonas()) {
 //            personas.imprimirDetallePersona();
