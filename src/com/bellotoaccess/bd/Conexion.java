@@ -10,6 +10,11 @@ import java.sql.SQLException;
  */
 public class Conexion {
     
+    
+    
+    
+    
+        //conexion phpmysql
         public Connection obtenerConexion()
     {
         Connection con = null;

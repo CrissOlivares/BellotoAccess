@@ -43,6 +43,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         jbtn_anadirProp = new javax.swing.JButton();
         jtxtfecha = new javax.swing.JLabel();
         jtxt_propFecha = new javax.swing.JTextField();
+        jbtn_cerrarSesion = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -185,6 +186,22 @@ public class RegistrarPropietario extends javax.swing.JFrame {
             }
         });
 
+        jbtn_cerrarSesion.setBackground(new java.awt.Color(255, 204, 204));
+        jbtn_cerrarSesion.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_cerrarSesion.setForeground(new java.awt.Color(53, 91, 62));
+        jbtn_cerrarSesion.setText("VOLVER");
+        jbtn_cerrarSesion.setBorder(null);
+        jbtn_cerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtn_cerrarSesionMouseClicked(evt);
+            }
+        });
+        jbtn_cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_cerrarSesionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -196,7 +213,9 @@ public class RegistrarPropietario extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jbtn_limpiarProp, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbtn_anadirProp, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(134, 134, 134)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_cerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JLbl_Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
@@ -229,7 +248,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
                                         .addGap(46, 46, 46)
                                         .addComponent(jtxt_propTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jtxt_propFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(611, Short.MAX_VALUE))
+                .addContainerGap(581, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +284,9 @@ public class RegistrarPropietario extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jbtn_anadirProp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jbtn_limpiarProp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbtn_limpiarProp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtn_cerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10))
                     .addComponent(JLbl_Icono, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(52, 52, 52))
@@ -370,6 +391,14 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxt_propFechaKeyPressed
 
+    private void jbtn_cerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionMouseClicked
+
+    }//GEN-LAST:event_jbtn_cerrarSesionMouseClicked
+
+    private void jbtn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionActionPerformed
+
+    }//GEN-LAST:event_jbtn_cerrarSesionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -418,6 +447,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton jbtn_anadirProp;
+    private javax.swing.JButton jbtn_cerrarSesion;
     private javax.swing.JButton jbtn_limpiarProp;
     private javax.swing.JTextField jtxt_propApellido;
     private javax.swing.JTextField jtxt_propEmail;
