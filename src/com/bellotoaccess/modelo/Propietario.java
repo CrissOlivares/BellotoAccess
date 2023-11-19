@@ -10,12 +10,12 @@ import java.util.Date;
 public class Propietario {
     private int id,deptowner,telef;
     private String run,nombre,apellido,email;
-    private Date fecha;
+   
 
     public Propietario() {
     }
 
-    public Propietario(int id, int deptowner, int telef, String run, String nombre, String apellido, String email, Date fecha) {
+    public Propietario(int id, int deptowner, int telef, String run, String nombre, String apellido, String email) {
         this.id = id;
         this.deptowner = deptowner;
         this.telef = telef;
@@ -23,7 +23,7 @@ public class Propietario {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.fecha = fecha;
+       
     }
 
     public int getId() {
@@ -82,17 +82,11 @@ public class Propietario {
         this.email = email;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
+   
 
     @Override
     public String toString() {
-        return "Propietario{" + "id=" + id + ", deptowner=" + deptowner + ", telef=" + telef + ", run=" + run + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", fecha=" + fecha + '}';
+        return "Propietario{" + "id=" + id + ", deptowner=" + deptowner + ", telef=" + telef + ", run=" + run + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + '}';
     }
    
     

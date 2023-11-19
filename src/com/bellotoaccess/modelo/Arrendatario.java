@@ -11,12 +11,12 @@ public class Arrendatario {
     
     private int id,numdept,telef;
     private String run,nombre,apellido,email;
-    private Date fecha;
+    
 
     public Arrendatario() {
     }
 
-    public Arrendatario(int id, int numdept, int telef, String run, String nombre, String apellido, String email, Date fecha) {
+    public Arrendatario(int id, int numdept, int telef, String run, String nombre, String apellido, String email) {
         this.id = id;
         this.numdept = numdept;
         this.telef = telef;
@@ -24,7 +24,7 @@ public class Arrendatario {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.fecha = fecha;
+        
     }
 
     public int getId() {
@@ -83,17 +83,11 @@ public class Arrendatario {
         this.email = email;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
+   
 
     @Override
     public String toString() {
-        return "Arrendatario{" + "id=" + id + ", numdept=" + numdept + ", telef=" + telef + ", run=" + run + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", fecha=" + fecha + '}';
+        return "Arrendatario{" + "id=" + id + ", numdept=" + numdept + ", telef=" + telef + ", run=" + run + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + '}';
     }
 
   

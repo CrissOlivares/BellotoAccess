@@ -14,15 +14,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
     /**
      * Creates new form RegistrarPersona
-     */
-//    Usuario us=new Usuario();
+//     */
+//    Usuario usu=new Usuario();
 //    RegistrarUsuario r=new RegistrarUsuario();
+    
     public RegistrarUsuario() {
         initComponents();
         Utils.cambiarIconoFrame(this);
-        
-        
-       
     }
 
     
@@ -368,33 +366,14 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_usLimpiarActionPerformed
 
     private void jbtn_usAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_usAnadirActionPerformed
-//          if (!this.jtxt_usId.getText().isBlank()) {
-//            if (!this.jtxt_usNombre.getText().isBlank()) {
-//                if (!this.jtxt_usApellido.getText().isBlank()) {
-//                    us=r.buscarPorId(Integer.parseInt(this.jtxt_usId.getText()));
-//                    if (us.getId()==0) {
-//                        us.setId(Integer.parseInt(this.jtxt_usId.getText()));
-//                        us.setNombre(this.jtxt_usNombre.getText());
-//                        us.setApellido(this.jtxt_usApellido.getText());
-//                        if (r.agregarUsuario(us)) {
-//                            JOptionPane.showMessageDialog(rootPane, "Usuario agregado con EXITO!!", "Confirmación de Datos", JOptionPane.INFORMATION_MESSAGE);
-//                            mostrarTabla();
-//                            this.btnLimpiarActionPerformed(evt);
-//                        }else{
-//                            JOptionPane.showMessageDialog(rootPane, "Error: Usuario NO agregado", "Confirmación de Datos", JOptionPane.ERROR_MESSAGE);
-//                        }
-//                    }else{
-//                        JOptionPane.showMessageDialog(rootPane, "Usuario YA EXISTE!!", "Confirmación de Datos", JOptionPane.ERROR_MESSAGE);
-//                    }
-//                }else{
-//                    JOptionPane.showMessageDialog(rootPane, "Apellido es Obligatorio", "Confirmación de Datos", JOptionPane.ERROR_MESSAGE);
-//                } 
-//            }else{
-//                JOptionPane.showMessageDialog(rootPane, "Nombre es Obligatorio", "Confirmación de Datos", JOptionPane.ERROR_MESSAGE);
-//            }
-//        }else{
-//            JOptionPane.showMessageDialog(rootPane, "Identificador es Obligatorio", "Confirmación de Datos", JOptionPane.ERROR_MESSAGE);
-//        }
+          if (jtxt_usId.getText().isBlank()) {
+              if (jtxt_usRun.getText().isBlank()) {
+                  System.out.println("No deben haber espacios en blanco");
+              } else {
+              }
+        } else {
+        }
+                       
     }//GEN-LAST:event_jbtn_usAnadirActionPerformed
 
     private void jbtn_usVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_usVolverMouseClicked

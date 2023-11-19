@@ -165,7 +165,7 @@ public class Login extends javax.swing.JFrame {
         jLabel5_textorunUsuario.setText("Run usuario:");
 
         JBtn_conect.setBackground(new java.awt.Color(255, 255, 255));
-        JBtn_conect.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 5)); // NOI18N
+        JBtn_conect.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 8)); // NOI18N
         JBtn_conect.setForeground(new java.awt.Color(2, 150, 100));
         JBtn_conect.setText("TEST CONECT.");
         JBtn_conect.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +237,7 @@ public class Login extends javax.swing.JFrame {
         if (jTxt_runUsuario.getText().isEmpty() && password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese sus credenciales.", "Error de ingreso", JOptionPane.ERROR_MESSAGE);
         } else { LoginDriver ld = new LoginDriver(db);
-        ld.redirigirLogin(this, db, ld.validaLogin(Utils.obtenerInput(jTxt_runUsuario), (Utils.obtenerPassword(jPasswordField2_contrasena)), db));
+        ld.redirigirLogin(this, db, ld.validaLoginArray(Utils.obtenerInput(jTxt_runUsuario), (Utils.obtenerPassword(jPasswordField2_contrasena)), db));
         }
        
   

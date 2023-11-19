@@ -25,7 +25,7 @@ public class LoginDriver {
     } 
             
     //validacion de prueba para el login usando el ArrayList
-    public boolean validaLogin (String runUsuario, String contrasena, BorradorDataBaseForTest db){
+    public boolean validaLoginArray (String runUsuario, String contrasena, BorradorDataBaseForTest db){
          ArrayList<Usuario> usuarios = db.getUsuarios();
          
          for (Usuario usuario : usuarios) {
