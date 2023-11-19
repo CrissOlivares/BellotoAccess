@@ -388,7 +388,7 @@
             <Component class="javax.swing.JButton" name="jbtn_anadirArren">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="3e" green="5b" red="35" type="rgb"/>
+                  <Color blue="64" green="96" red="2" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Yu Gothic UI Semibold" size="14" style="0"/>

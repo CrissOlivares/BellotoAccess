@@ -1,7 +1,7 @@
 
 package com.bellotoaccess.utils;
 
-import com.bellotoaccess.modelo.DataBaseForTest;
+import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.vista.Login;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -27,6 +27,7 @@ public class Utils {
             frame.setIconImage(icono.getImage()); }
         }
         
+        //inputs login
     public static String obtenerInput(JTextField campo){
         return campo.getText();//getText es para run email etc
     }

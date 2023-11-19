@@ -8,7 +8,7 @@ package com.bellotoaccess.modelo;
  *
  * @author Cristian Olivares
  */
-public class Persona {
+public class BorradorPersona {
 
     public static void Persona() {
    
@@ -23,10 +23,10 @@ public class Persona {
     private boolean estado;
     
     //constructores
-    public Persona() {
+    public BorradorPersona() {
     }
 
-    public Persona(String run, String nombre, String apellido, int depto, int piso, int celular, String email, String tipo, boolean estado) {
+    public BorradorPersona(String run, String nombre, String apellido, int depto, int piso, int celular, String email, String tipo, boolean estado) {
         this.run = run;
         this.nombre = nombre;
         this.apellido = apellido;

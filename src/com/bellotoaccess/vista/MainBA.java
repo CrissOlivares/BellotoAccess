@@ -2,8 +2,8 @@
 package com.bellotoaccess.vista;
 //author Cristian Olivares
 //IMPORTS
-import com.bellotoaccess.modelo.Persona;
-import com.bellotoaccess.modelo.DataBaseForTest;
+import com.bellotoaccess.modelo.BorradorPersona;
+import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.modelo.Usuario;
 
 
@@ -19,9 +19,9 @@ public class MainBA {
         
         
         
-//        DataBaseForTest db = new DataBaseForTest();
+//        BorradorDataBaseForTest db = new BorradorDataBaseForTest();
 //        //imprime la base de datos de las personas 
-//        for (Persona personas : db.getPersonas()) {
+//        for (BorradorPersona personas : db.getPersonas()) {
 //            personas.imprimirDetallePersona();
 //        }
 //        System.out.println("**************************************");

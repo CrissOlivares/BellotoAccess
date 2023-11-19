@@ -98,7 +98,7 @@ public class RegistrarPropietarioDepto extends javax.swing.JFrame {
             }
         });
 
-        JBtn_Modificar1.setBackground(new java.awt.Color(53, 91, 62));
+        JBtn_Modificar1.setBackground(new java.awt.Color(2, 150, 100));
         JBtn_Modificar1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         JBtn_Modificar1.setForeground(new java.awt.Color(255, 255, 255));
         JBtn_Modificar1.setText("AÑADIR");

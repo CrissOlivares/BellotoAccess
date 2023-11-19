@@ -3,8 +3,9 @@ package com.bellotoaccess.vista;
 
 import com.bellotoaccess.bd.Conexion;
 import com.bellotoaccess.controlador.LoginDriver;
-import com.bellotoaccess.modelo.DataBaseForTest;
+import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.utils.Utils;
+import com.bellotoaccess.vistaRegistro.RegistrarArrendatario;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
@@ -17,13 +18,13 @@ import javax.swing.JTextField;
  */
 public class Login extends javax.swing.JFrame {
 
-    private DataBaseForTest db;
+    private BorradorDataBaseForTest db;
     //Constructor de interfaz LOGIN
     public Login() {
         initComponents();
         Utils.cambiarIconoFrame(this);
         
-        this.db = new DataBaseForTest();
+        this.db = new BorradorDataBaseForTest();
         db.getUsuarios();
     }
 
@@ -41,7 +42,7 @@ public class Login extends javax.swing.JFrame {
         jButton1_ingresar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton2_registrarse = new javax.swing.JButton();
+        jbtn_registroUs = new javax.swing.JButton();
         jPasswordField2_contrasena = new javax.swing.JPasswordField();
         jLabel5_textorunUsuario = new javax.swing.JLabel();
         JBtn_conect = new javax.swing.JButton();
@@ -138,13 +139,13 @@ public class Login extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Inicia sesión con tus credenciales");
 
-        jButton2_registrarse.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2_registrarse.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jButton2_registrarse.setForeground(new java.awt.Color(2, 150, 100));
-        jButton2_registrarse.setText("REGISTRARSE");
-        jButton2_registrarse.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_registroUs.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_registroUs.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_registroUs.setForeground(new java.awt.Color(2, 150, 100));
+        jbtn_registroUs.setText("REGISTRARSE");
+        jbtn_registroUs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2_registrarseActionPerformed(evt);
+                jbtn_registroUsActionPerformed(evt);
             }
         });
 
@@ -185,7 +186,7 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbtn_registroUs, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel3_textoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTxt_runUsuario)
                         .addComponent(jPasswordField2_contrasena))
@@ -216,7 +217,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbtn_registroUs, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
@@ -242,9 +243,12 @@ public class Login extends javax.swing.JFrame {
   
     }//GEN-LAST:event_jButton1_ingresarActionPerformed
 
-    private void jButton2_registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_registrarseActionPerformed
-       
-    }//GEN-LAST:event_jButton2_registrarseActionPerformed
+    private void jbtn_registroUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_registroUsActionPerformed
+        RegistrarUsuario regus=new RegistrarUsuario();
+        regus.setVisible(true);
+        regus.setLocationRelativeTo(null);
+        
+    }//GEN-LAST:event_jbtn_registroUsActionPerformed
 
     private void jPasswordField2_contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2_contrasenaActionPerformed
        
@@ -319,7 +323,6 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBtn_conect;
     private javax.swing.JButton jButton1_ingresar;
-    private javax.swing.JButton jButton2_registrarse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3_textoContrasena;
     private javax.swing.JLabel jLabel5_textorunUsuario;
@@ -331,5 +334,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField2_contrasena;
     private javax.swing.JTextField jTxt_runUsuario;
+    private javax.swing.JButton jbtn_registroUs;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,7 +1,7 @@
 
 package com.bellotoaccess.controlador;
 
-import com.bellotoaccess.modelo.DataBaseForTest;
+import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.modelo.Usuario;
 import com.bellotoaccess.vista.MenuInicial;
 import java.util.ArrayList;
@@ -14,18 +14,18 @@ import javax.swing.JOptionPane;
  */
 public class LoginDriver {
 
-    private DataBaseForTest db = new DataBaseForTest();
+    private BorradorDataBaseForTest db = new BorradorDataBaseForTest();
     
     
     public LoginDriver() {
     }
    
-    public LoginDriver (DataBaseForTest db){
+    public LoginDriver (BorradorDataBaseForTest db){
         this.db = db;
     } 
             
     //validacion de prueba para el login usando el ArrayList
-    public boolean validaLogin (String runUsuario, String contrasena, DataBaseForTest db){
+    public boolean validaLogin (String runUsuario, String contrasena, BorradorDataBaseForTest db){
          ArrayList<Usuario> usuarios = db.getUsuarios();
          
          for (Usuario usuario : usuarios) {
@@ -40,7 +40,7 @@ public class LoginDriver {
     return false;
     }
     //Te envia al menu principal
-    public void redirigirLogin (JFrame frame, DataBaseForTest db, boolean estado  ){
+    public void redirigirLogin (JFrame frame, BorradorDataBaseForTest db, boolean estado  ){
         if (estado) {frame.dispose();
         MenuInicial vp = new MenuInicial(db);
         vp.setVisible(true);

@@ -1,6 +1,6 @@
 
 package com.bellotoaccess.vista;
-import com.bellotoaccess.modelo.DataBaseForTest;
+import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.utils.Utils;
 import javax.swing.JButton;
 
@@ -10,9 +10,9 @@ import javax.swing.JButton;
  */
 public class MenuInicial extends javax.swing.JFrame {
 
-    private DataBaseForTest db;
+    private BorradorDataBaseForTest db;
     //se agregar el icono de la app
-    public MenuInicial(DataBaseForTest db) {
+    public MenuInicial(BorradorDataBaseForTest db) {
         initComponents();
         Utils.cambiarIconoFrame(this);
         
@@ -294,7 +294,7 @@ public class MenuInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_irAnadirArrenActionPerformed
 
     private void jbtn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionActionPerformed
-        
+         System.exit(0);
        
     }//GEN-LAST:event_jbtn_cerrarSesionActionPerformed
 

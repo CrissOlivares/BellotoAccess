@@ -177,7 +177,7 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
             }
         });
 
-        jbtn_anadirArren.setBackground(new java.awt.Color(53, 91, 62));
+        jbtn_anadirArren.setBackground(new java.awt.Color(2, 150, 100));
         jbtn_anadirArren.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jbtn_anadirArren.setForeground(new java.awt.Color(255, 255, 255));
         jbtn_anadirArren.setText("AÑADIR");

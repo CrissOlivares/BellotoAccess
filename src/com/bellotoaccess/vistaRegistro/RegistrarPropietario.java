@@ -157,7 +157,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
             }
         });
 
-        jbtn_anadirProp.setBackground(new java.awt.Color(53, 91, 62));
+        jbtn_anadirProp.setBackground(new java.awt.Color(2, 150, 100));
         jbtn_anadirProp.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jbtn_anadirProp.setForeground(new java.awt.Color(255, 255, 255));
         jbtn_anadirProp.setText("AÑADIR");

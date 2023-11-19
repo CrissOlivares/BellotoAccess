@@ -133,7 +133,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jButton1_ingresar" min="-2" pref="133" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton2_registrarse" min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="jbtn_registroUs" min="-2" pref="133" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel3_textoContrasena" min="-2" pref="113" max="-2" attributes="0"/>
                           <Component id="jTxt_runUsuario" alignment="0" max="32767" attributes="0"/>
@@ -171,7 +171,7 @@
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1_ingresar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jButton2_registrarse" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jbtn_registroUs" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="111" max="32767" attributes="0"/>
               </Group>
@@ -254,7 +254,7 @@
             <Property name="text" type="java.lang.String" value="Inicia sesi&#xf3;n con tus credenciales"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2_registrarse">
+        <Component class="javax.swing.JButton" name="jbtn_registroUs">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -268,7 +268,7 @@
             <Property name="text" type="java.lang.String" value="REGISTRARSE"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2_registrarseActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtn_registroUsActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="jPasswordField2_contrasena">

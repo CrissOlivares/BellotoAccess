@@ -27,7 +27,7 @@ public class Conexion {
     }
         
 //          //conexion con Oracle
-//    private static final String WALLET_PATH = "C:/Users/USRVI-LC3/Documents/Wallet_libreria";
+//    private static final String WALLET_PATH = "C:/Users/USRVI-LC3/Documents/";
 //    private static final String WALLET_PASSWORD = "ValeNico.2003";
 //    private static final String JDBC_URL = "jdbc:oracle:thin:@libreria_high"; // - REEMPLAZA 'testdb_high' EN EL ARCHIVO TNSNAMES.ORA APARECE AL INICIO [NOMBRE DE LA DB]_HIGH";
 //
