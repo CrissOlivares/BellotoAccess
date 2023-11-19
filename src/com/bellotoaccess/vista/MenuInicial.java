@@ -2,6 +2,8 @@
 package com.bellotoaccess.vista;
 import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.utils.Utils;
+import com.bellotoaccess.vistaRegistro.RegistrarArrendatario;
+import com.bellotoaccess.vistaRegistro.RegistrarPropietario;
 import javax.swing.JButton;
 
 /**
@@ -22,6 +24,7 @@ public class MenuInicial extends javax.swing.JFrame {
     //constructor sin parametros
     public MenuInicial(){
         initComponents();
+         Utils.cambiarIconoFrame(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -35,18 +38,18 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        JBtn_Buscar = new javax.swing.JButton();
         jbtn_cerrarSesion = new javax.swing.JButton();
         jbtn_irAnadirArren = new javax.swing.JButton();
         jbtn_modificar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         JLbl_IconoUsuario = new javax.swing.JLabel();
         JLbl_MenPrincipal = new javax.swing.JLabel();
-        JLbl_MenPrincipal3 = new javax.swing.JLabel();
         JLbl_MenPrincipal4 = new javax.swing.JLabel();
+        JLbl_MenPrincipal5 = new javax.swing.JLabel();
         JLbl_Icono = new javax.swing.JLabel();
         JBtn_Eliminar_arren = new javax.swing.JButton();
         jbtn_irAnadirProp = new javax.swing.JButton();
+        JLbl_MenPrincipal3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BellotoAccess - Sistema administrativo de Condominios");
@@ -112,35 +115,17 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTxt_runUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(44, 44, 44)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 890, 510));
 
-        JBtn_Buscar.setBackground(new java.awt.Color(255, 255, 255));
-        JBtn_Buscar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        JBtn_Buscar.setForeground(new java.awt.Color(53, 91, 62));
-        JBtn_Buscar.setText("BUSCAR");
-        JBtn_Buscar.setBorder(null);
-        JBtn_Buscar.setOpaque(true);
-        JBtn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JBtn_BuscarMouseClicked(evt);
-            }
-        });
-        JBtn_Buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBtn_BuscarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(JBtn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 80, 140, 25));
-
         jbtn_cerrarSesion.setBackground(new java.awt.Color(255, 204, 204));
         jbtn_cerrarSesion.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jbtn_cerrarSesion.setForeground(new java.awt.Color(53, 91, 62));
-        jbtn_cerrarSesion.setText("CERRAR SESIÓN");
+        jbtn_cerrarSesion.setText("SALIR");
         jbtn_cerrarSesion.setBorder(null);
         jbtn_cerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -157,7 +142,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jbtn_irAnadirArren.setBackground(new java.awt.Color(255, 255, 255));
         jbtn_irAnadirArren.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jbtn_irAnadirArren.setForeground(new java.awt.Color(53, 91, 62));
-        jbtn_irAnadirArren.setText("AÑADIR ARRENDATARIO");
+        jbtn_irAnadirArren.setText("ARRENDATARIO");
         jbtn_irAnadirArren.setBorder(null);
         jbtn_irAnadirArren.setOpaque(true);
         jbtn_irAnadirArren.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +150,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 jbtn_irAnadirArrenActionPerformed(evt);
             }
         });
-        jPanel2.add(jbtn_irAnadirArren, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 170, 25));
+        jPanel2.add(jbtn_irAnadirArren, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 170, 25));
 
         jbtn_modificar.setBackground(new java.awt.Color(255, 255, 255));
         jbtn_modificar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -186,20 +171,17 @@ public class MenuInicial extends javax.swing.JFrame {
         JLbl_MenPrincipal.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         JLbl_MenPrincipal.setForeground(new java.awt.Color(255, 255, 255));
         JLbl_MenPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLbl_MenPrincipal.setLabelFor(JBtn_Buscar);
         JLbl_MenPrincipal.setText("MENÚ PRINCIPAL");
-
-        JLbl_MenPrincipal3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        JLbl_MenPrincipal3.setForeground(new java.awt.Color(255, 255, 255));
-        JLbl_MenPrincipal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLbl_MenPrincipal3.setLabelFor(JBtn_Buscar);
-        JLbl_MenPrincipal3.setText("Cristian Olivares");
 
         JLbl_MenPrincipal4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         JLbl_MenPrincipal4.setForeground(new java.awt.Color(255, 255, 255));
         JLbl_MenPrincipal4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLbl_MenPrincipal4.setLabelFor(JBtn_Buscar);
         JLbl_MenPrincipal4.setText("USUARIO:");
+
+        JLbl_MenPrincipal5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        JLbl_MenPrincipal5.setForeground(new java.awt.Color(255, 255, 255));
+        JLbl_MenPrincipal5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLbl_MenPrincipal5.setText("Cristian Olivares");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -209,14 +191,17 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addComponent(JLbl_MenPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(JLbl_IconoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
-                .addComponent(JLbl_MenPrincipal3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(620, Short.MAX_VALUE))
+                .addContainerGap(844, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(170, 170, 170)
                     .addComponent(JLbl_MenPrincipal4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(732, Short.MAX_VALUE)))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(292, 292, 292)
+                    .addComponent(JLbl_MenPrincipal5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(610, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,14 +210,17 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addComponent(JLbl_IconoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLbl_MenPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JLbl_MenPrincipal3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JLbl_MenPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(JLbl_MenPrincipal4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(JLbl_MenPrincipal5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
@@ -256,7 +244,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jbtn_irAnadirProp.setBackground(new java.awt.Color(255, 255, 255));
         jbtn_irAnadirProp.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jbtn_irAnadirProp.setForeground(new java.awt.Color(53, 91, 62));
-        jbtn_irAnadirProp.setText("AÑADIR PROPIETARIO");
+        jbtn_irAnadirProp.setText("PROPIETARIO");
         jbtn_irAnadirProp.setBorder(null);
         jbtn_irAnadirProp.setOpaque(true);
         jbtn_irAnadirProp.addActionListener(new java.awt.event.ActionListener() {
@@ -264,7 +252,13 @@ public class MenuInicial extends javax.swing.JFrame {
                 jbtn_irAnadirPropActionPerformed(evt);
             }
         });
-        jPanel2.add(jbtn_irAnadirProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 170, 25));
+        jPanel2.add(jbtn_irAnadirProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 170, 25));
+
+        JLbl_MenPrincipal3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        JLbl_MenPrincipal3.setForeground(new java.awt.Color(53, 91, 62));
+        JLbl_MenPrincipal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLbl_MenPrincipal3.setText("AÑADIR");
+        jPanel2.add(JLbl_MenPrincipal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 70, 150, 34));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,7 +284,9 @@ public class MenuInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_modificarActionPerformed
 
     private void jbtn_irAnadirArrenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_irAnadirArrenActionPerformed
-        // TODO add your handling code here:
+       RegistrarArrendatario rear=new RegistrarArrendatario();
+        rear.setVisible(true);
+        rear.setLocationRelativeTo(null);
     }//GEN-LAST:event_jbtn_irAnadirArrenActionPerformed
 
     private void jbtn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionActionPerformed
@@ -306,24 +302,18 @@ public class MenuInicial extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTxt_runUsuarioActionPerformed
 
-    private void JBtn_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtn_BuscarActionPerformed
-
-    }//GEN-LAST:event_JBtn_BuscarActionPerformed
-
     private void JBtn_Eliminar_arrenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtn_Eliminar_arrenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBtn_Eliminar_arrenActionPerformed
-
-    private void JBtn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBtn_BuscarMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBtn_BuscarMouseClicked
 
     private void jbtn_cerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionMouseClicked
       
     }//GEN-LAST:event_jbtn_cerrarSesionMouseClicked
 
     private void jbtn_irAnadirPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_irAnadirPropActionPerformed
-        // TODO add your handling code here:
+       RegistrarPropietario repo=new RegistrarPropietario();
+        repo.setVisible(true);
+        repo.setLocationRelativeTo(null);
     }//GEN-LAST:event_jbtn_irAnadirPropActionPerformed
 
     /**
@@ -369,13 +359,13 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBtn_Buscar;
     private javax.swing.JButton JBtn_Eliminar_arren;
     private javax.swing.JLabel JLbl_Icono;
     private javax.swing.JLabel JLbl_IconoUsuario;
     private javax.swing.JLabel JLbl_MenPrincipal;
     private javax.swing.JLabel JLbl_MenPrincipal3;
     private javax.swing.JLabel JLbl_MenPrincipal4;
+    private javax.swing.JLabel JLbl_MenPrincipal5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

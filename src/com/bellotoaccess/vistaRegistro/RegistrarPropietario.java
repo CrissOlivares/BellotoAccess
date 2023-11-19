@@ -48,6 +48,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("BellotoAccess - Sistema administrativo de Condominios");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -396,7 +397,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_cerrarSesionMouseClicked
 
     private void jbtn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionActionPerformed
-
+        dispose();
     }//GEN-LAST:event_jbtn_cerrarSesionActionPerformed
 
     /**

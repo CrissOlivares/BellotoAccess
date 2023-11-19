@@ -2,6 +2,7 @@
 package com.bellotoaccess.vista;
 
 import com.bellotoaccess.modelo.Usuario;
+import com.bellotoaccess.utils.Utils;
 import com.bellotoaccess.vistaRegistro.*;
 import javax.swing.JOptionPane;
 
@@ -18,6 +19,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 //    RegistrarUsuario r=new RegistrarUsuario();
     public RegistrarUsuario() {
         initComponents();
+        Utils.cambiarIconoFrame(this);
         
         
        
@@ -53,6 +55,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("BellotoAccess - Sistema administrativo de Condominios");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

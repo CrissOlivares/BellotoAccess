@@ -50,6 +50,7 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("BellotoAccess - Sistema administrativo de Condominios");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -412,7 +413,13 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxt_arrenTelefonoKeyPressed
 
     private void jbtn_limpiarArrenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_limpiarArrenActionPerformed
-        // TODO add your handling code here:
+       this.jtxt_arrenApellido.setText("");
+                this.jtxt_arrenEmail.setText("");
+                this.jtxt_arrenFecha.setText("");
+                this.jtxt_arrenNombre.setText("");
+                this.jtxt_arrenNumDepto.setText("");
+                this.jtxt_arrenRun.setText("");
+                this.jtxt_arrenTelefono.setText("");
     }//GEN-LAST:event_jbtn_limpiarArrenActionPerformed
 
     private void jbtn_anadirArrenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_anadirArrenActionPerformed
@@ -432,7 +439,7 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_cerrarSesionMouseClicked
 
     private void jbtn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionActionPerformed
-
+        dispose();
     }//GEN-LAST:event_jbtn_cerrarSesionActionPerformed
 
     /**
