@@ -3,6 +3,7 @@ package com.bellotoaccess.vista;
 
 import com.bellotoaccess.bd.Conexion;
 import com.bellotoaccess.controlador.LoginDriver;
+import com.bellotoaccess.controlador.Registro;
 import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.utils.Utils;
 import com.bellotoaccess.vistaRegistro.RegistrarArrendatario;
@@ -233,14 +234,14 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTxt_runUsuarioActionPerformed
 
     private void jButton1_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_ingresarActionPerformed
-        String password = String.valueOf(jPasswordField2_contrasena.getPassword());
-        if (jTxt_runUsuario.getText().isEmpty() && password.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingrese sus credenciales.", "Error de ingreso", JOptionPane.ERROR_MESSAGE);
-        } else { LoginDriver ld = new LoginDriver(db);
-        ld.redirigirLogin(this, db, ld.validaLoginArray(Utils.obtenerInput(jTxt_runUsuario), (Utils.obtenerPassword(jPasswordField2_contrasena)), db));
-        }
-       
-  
+        
+           
+//        String password = String.valueOf(jPasswordField2_contrasena.getPassword());
+//        if (jTxt_runUsuario.getText().isEmpty() && password.isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "Ingrese sus credenciales.", "Error de ingreso", JOptionPane.ERROR_MESSAGE);
+//        } else { LoginDriver ld = new LoginDriver(db);
+//        ld.redirigirLogin(this, db, ld.validaLoginArray(Utils.obtenerInput(jTxt_runUsuario), (Utils.obtenerPassword(jPasswordField2_contrasena)), db));
+//        }
     }//GEN-LAST:event_jButton1_ingresarActionPerformed
 
     private void jbtn_registroUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_registroUsActionPerformed

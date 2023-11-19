@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,7 +23,7 @@ public class Registro {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            String query = "INSERT INTO usuario (id, run, nombre, apellido,contraseña) VALUES (?, ?, ?, ?,?)";
+            String query = "INSERT INTO usuario (id_us, run_us, nombre_us, apellido_us,pass_us) VALUES (?, ?, ?, ?,?)";
             PreparedStatement stmt = cnx.prepareStatement(query);
             stmt.setInt(1, us.getId());
             stmt.setString(2, us.getRun());
@@ -41,6 +42,35 @@ public class Registro {
             return false;
         }
     }
+     
+     
+     public Usuario buscarPorId(int id) {
+        Usuario us = new Usuario();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            //Declaro un string donde guardo la QUERY para ejecutar en la BD
+            String query = "SELECT * FROM usuario WHERE id_us=?";
+            //Defino PreparedStatement
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            //con el query asignado ahora le doy valores a los '?'
+            stmt.setInt(1, id);
+            //ejecuto la consulta
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                us.setId(id);
+              
+            }
+            //cierro conexiones
+            stmt.close();
+            cnx.close();
+        } catch (SQLException e) {
+            System.out.println("Error SQL buscar Usuario por ID: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error buscar Usuario por ID: " + e.getMessage());
+        }
+        return us;
+     }
      
     //CRUD ARRENDATARIO
      public boolean agregarArrendatario(Arrendatario ar) {
@@ -129,7 +159,7 @@ public class Registro {
         }
     }
      
-     public Arrendatario buscarPorId(int id) {
+     public Arrendatario buscarPorIdArr(int id) {
         Arrendatario ar = new Arrendatario();
         try {
             Conexion con = new Conexion();
@@ -157,7 +187,40 @@ public class Registro {
             System.out.println("Error buscar Arrendatario por ID: " + e.getMessage());
         }
         return ar;
+     }
+        
+        
+        //VALIDACION DE LOGIN
+        public boolean accesoLogin(String usuario, String pass){
+        Conexion con = new Conexion();
+        String usuarioCorrecto=null;
+        String passCorrecto=null;
+    try {
+        Connection cnx = con.obtenerConexion();
+        PreparedStatement pst = cnx.prepareStatement("SELECT run_us, pass_us FROM usuario");
+        ResultSet rs = pst.executeQuery();
+        
+            if (rs.next()){
+                usuarioCorrecto = rs.getString(1);
+                passCorrecto = rs.getString(2);
+            }
+            
+            if (usuario.equals(usuarioCorrecto) && pass.equals(passCorrecto)){
+                JOptionPane.showMessageDialog(null, "Login correcto, Bienvenido");
+                return true;
+            } else if (usuario.equals(usuarioCorrecto)|| pass.equals(passCorrecto)){
+                JOptionPane.showMessageDialog(null, "Usuario Incorrecto");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrecta");
+            return false;
+        }
+       return false; 
     }
+    }
+
+           
+    
      
 //    public boolean agregar(Arrendatario arrendatario)
 //    {
@@ -191,4 +254,4 @@ public class Registro {
 //    }
     
     
-}
+

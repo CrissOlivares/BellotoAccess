@@ -4,6 +4,8 @@
  */
 package com.bellotoaccess.vistaRegistro;
 
+import com.bellotoaccess.utils.Utils;
+
 /**
  *
  * @author coh_o
@@ -15,6 +17,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
      */
     public RegistrarPropietario() {
         initComponents();
+        Utils.cambiarIconoFrame(this);
     }
 
     /**

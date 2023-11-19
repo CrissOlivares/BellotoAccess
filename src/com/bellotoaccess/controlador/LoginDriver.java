@@ -1,12 +1,16 @@
 
 package com.bellotoaccess.controlador;
 
+import com.bellotoaccess.bd.Conexion;
 import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.modelo.Usuario;
 import com.bellotoaccess.vista.MenuInicial;
+import com.sun.jdi.connect.spi.Connection;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -24,26 +28,28 @@ public class LoginDriver {
         this.db = db;
     } 
             
-    //validacion de prueba para el login usando el ArrayList
-    public boolean validaLoginArray (String runUsuario, String contrasena, BorradorDataBaseForTest db){
-         ArrayList<Usuario> usuarios = db.getUsuarios();
-         
-         for (Usuario usuario : usuarios) {
-             if (usuario.getRun().equalsIgnoreCase(runUsuario) && usuario.getContraseña().equals(contrasena) ){
-                 //aqui va para mostrar un mensaje de que estas entrando : JOptionPane.showMessageDialog(null, "Ingresando...", "Información",JOptionPane.INFORMATION_MESSAGE );
-                 return true;
-             } else{
-                 JOptionPane.showMessageDialog(null, "Run o contraseña incorrecta.", "Información",JOptionPane.WARNING_MESSAGE); 
-                 return false;
-            }
-        }
-    return false;
-    }
+    
+//    //validacion de prueba para el login usando el ArrayList
+//    public boolean validaLoginArray (String runUsuario, String contrasena, BorradorDataBaseForTest db){
+//         ArrayList<Usuario> usuarios = db.getUsuarios();
+//         
+//         for (Usuario usuario : usuarios) {
+//             if (usuario.getRun().equalsIgnoreCase(runUsuario) && usuario.getContraseña().equals(contrasena) ){
+//                 //aqui va para mostrar un mensaje de que estas entrando : JOptionPane.showMessageDialog(null, "Ingresando...", "Información",JOptionPane.INFORMATION_MESSAGE );
+//                 return true;
+//             } else{
+//                 JOptionPane.showMessageDialog(null, "Run o contraseña incorrecta.", "Información",JOptionPane.WARNING_MESSAGE); 
+//                 return false;
+//            }
+//        }
+//    return false;
+//    }
+    
     //Te envia al menu principal
-    public void redirigirLogin (JFrame frame, BorradorDataBaseForTest db, boolean estado  ){
-        if (estado) {frame.dispose();
-        MenuInicial vp = new MenuInicial(db);
-        vp.setVisible(true);
-        }     
-    }
+//    public void redirigirLogin (JFrame frame, BorradorDataBaseForTest db, boolean estado  ){
+//        if (estado) {frame.dispose();
+//        MenuInicial vp = new MenuInicial(db);
+//        vp.setVisible(true);
+//        }     
+//    }
 }

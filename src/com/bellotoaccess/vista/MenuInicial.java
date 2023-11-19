@@ -4,7 +4,9 @@ import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.utils.Utils;
 import com.bellotoaccess.vistaRegistro.RegistrarArrendatario;
 import com.bellotoaccess.vistaRegistro.RegistrarPropietario;
+import java.util.ArrayList;
 import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -379,4 +381,23 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JButton jbtn_irAnadirProp;
     private javax.swing.JButton jbtn_modificar;
     // End of variables declaration//GEN-END:variables
+
+//     private void mostrarTabla() {
+//        //defino variables para rescatar del objeto usuario
+//        int identificador;
+//        String nombre, apellido, cargo;
+//        
+//        DefaultTableModel modelo=(DefaultTableModel) this.tblUsuarios.getModel();
+//        //para que no se duplique la información
+//        modelo.setRowCount(0);
+//        ArrayList<Usuario> lista=r.listarUsuarios();
+//        for (Usuario usuario : lista) {
+//            identificador=usuario.getIdentificador();
+//            nombre=usuario.getNombre();
+//            apellido=usuario.getApellido();
+//            cargo=usuario.getCargo();
+//            modelo.addRow(new Object[]{identificador,nombre,apellido,cargo});
+//        }
+//    }
+
 }

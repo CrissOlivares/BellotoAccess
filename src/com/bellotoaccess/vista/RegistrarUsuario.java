@@ -1,6 +1,7 @@
 
 package com.bellotoaccess.vista;
 
+import com.bellotoaccess.controlador.Registro;
 import com.bellotoaccess.modelo.Usuario;
 import com.bellotoaccess.utils.Utils;
 import com.bellotoaccess.vistaRegistro.*;
@@ -15,8 +16,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     /**
      * Creates new form RegistrarPersona
 //     */
-//    Usuario usu=new Usuario();
-//    RegistrarUsuario r=new RegistrarUsuario();
+    Usuario us=new Usuario();
+    Registro r=new Registro();
     
     public RegistrarUsuario() {
         initComponents();
@@ -366,13 +367,22 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_usLimpiarActionPerformed
 
     private void jbtn_usAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_usAnadirActionPerformed
-          if (jtxt_usId.getText().isBlank()) {
-              if (jtxt_usRun.getText().isBlank()) {
-                  System.out.println("No deben haber espacios en blanco");
-              } else {
-              }
-        } else {
-        }
+                if (!this.jtxt_usId.getText().isBlank()) {
+                    us=r.buscarPorId(Integer.parseInt(this.jtxt_usId.getText()));}
+                        if (us.getId()==0) {
+                        us.setId(Integer.parseInt(this.jtxt_usId.getText()));
+                        us.setRun(this.jtxt_usRun.getText());
+                        us.setNombre(this.jtxt_usNombre.getText());
+                        us.setApellido(this.jtxt_usContrasena.getText());
+                        us.setContraseña(this.jtxt_usContrasena.getText());
+                        if (r.agregarUsuario(us)) {
+                            JOptionPane.showMessageDialog(rootPane, "Usuario agregado", "Añadir Usuario", JOptionPane.INFORMATION_MESSAGE);
+                        }else{
+                            JOptionPane.showMessageDialog(rootPane, "Error: usuario no agregado", "Añadir Usuario", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(rootPane, "Error: este usuario ya existe", "Añadir Usuario", JOptionPane.ERROR_MESSAGE);
+                    }
                        
     }//GEN-LAST:event_jbtn_usAnadirActionPerformed
 

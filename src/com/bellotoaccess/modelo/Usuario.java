@@ -12,6 +12,7 @@ public class Usuario {
     private String contraseña;
 
     public Usuario() {
+        this.id=0;
     }
 
     public Usuario(int id, String run, String nombre, String apellido, String contraseña) {

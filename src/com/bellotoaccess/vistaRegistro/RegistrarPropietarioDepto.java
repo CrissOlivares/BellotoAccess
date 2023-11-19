@@ -4,6 +4,8 @@
  */
 package com.bellotoaccess.vistaRegistro;
 
+import com.bellotoaccess.utils.Utils;
+
 /**
  *
  * @author coh_o
@@ -13,9 +15,12 @@ public class RegistrarPropietarioDepto extends javax.swing.JFrame {
     /**
      * Creates new form RegistrarPersona
      */
+     
     public RegistrarPropietarioDepto() {
         initComponents();
+        Utils.cambiarIconoFrame(this);
     }
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
