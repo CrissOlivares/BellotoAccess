@@ -1,10 +1,12 @@
 
 package com.bellotoaccess.vista;
 
+import com.bellotoaccess.bd.Conexion;
 import com.bellotoaccess.controlador.LoginDriver;
 import com.bellotoaccess.modelo.DataBaseForTest;
 import com.bellotoaccess.utils.Utils;
 import java.awt.event.KeyEvent;
+import java.sql.Connection;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -42,6 +44,7 @@ public class Login extends javax.swing.JFrame {
         jButton2_registrarse = new javax.swing.JButton();
         jPasswordField2_contrasena = new javax.swing.JPasswordField();
         jLabel5_textorunUsuario = new javax.swing.JLabel();
+        JBtn_conect = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BellotoAccess - Sistema administrativo de Condominios");
@@ -66,7 +69,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(132, Short.MAX_VALUE)
+                .addContainerGap(126, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(131, 131, 131))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -160,6 +163,16 @@ public class Login extends javax.swing.JFrame {
         jLabel5_textorunUsuario.setForeground(new java.awt.Color(53, 91, 62));
         jLabel5_textorunUsuario.setText("Run usuario:");
 
+        JBtn_conect.setBackground(new java.awt.Color(255, 255, 255));
+        JBtn_conect.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 5)); // NOI18N
+        JBtn_conect.setForeground(new java.awt.Color(2, 150, 100));
+        JBtn_conect.setText("TEST CONECT.");
+        JBtn_conect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtn_conectActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -169,23 +182,28 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5_textorunUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel8)
-                        .addComponent(jLabel6)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel3_textoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTxt_runUsuario)
-                        .addComponent(jPasswordField2_contrasena)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                        .addComponent(jPasswordField2_contrasena))
+                    .addComponent(jLabel8)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(JBtn_conect, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(96, 96, 96)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(JBtn_conect))
+                .addGap(16, 16, 16)
                 .addComponent(jLabel8)
                 .addGap(56, 56, 56)
                 .addComponent(jLabel5_textorunUsuario)
@@ -199,7 +217,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 550));
@@ -244,6 +262,16 @@ public class Login extends javax.swing.JFrame {
             jButton1_ingresar.doClick();
         } 
     }//GEN-LAST:event_jPasswordField2_contrasenaKeyPressed
+
+    private void JBtn_conectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtn_conectActionPerformed
+        //Probar conexion 
+        try{
+            Conexion con=new Conexion();
+            Connection cnx=con.obtenerConexion();
+        }catch(Exception ex){
+            System.out.println("Error: "+ex.getMessage());
+        }
+    }//GEN-LAST:event_JBtn_conectActionPerformed
     //Metodos Customizados
 
     
@@ -289,6 +317,7 @@ public class Login extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBtn_conect;
     private javax.swing.JButton jButton1_ingresar;
     private javax.swing.JButton jButton2_registrarse;
     private javax.swing.JLabel jLabel1;
