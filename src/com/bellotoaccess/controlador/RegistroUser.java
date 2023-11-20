@@ -16,9 +16,9 @@ import javax.swing.JOptionPane;
  *
  * @author coh_o
  */
-public class Registro {
+public class RegistroUser {
     
-    //CRUD PARA LOS USUARIO (SOLO AGREGAR)
+    //CRUD PARA LOS USUARIOS, AGREGAR USUARIO
      public boolean agregarUsuario(Usuario us) {
         try {
             Conexion con = new Conexion();
@@ -42,8 +42,36 @@ public class Registro {
             return false;
         }
     }
-     
-     
+     //MODIFICAR USUARIO
+     public boolean modificarUsuario(Usuario us) {
+      try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            //Declaro un string donde guardo la QUERY para ejecutar en la BD
+            String query = "UPDATE usuario SET run_us=?, nombre_us=?,apellido_us=?,pass_us=? WHERE id_us=?";
+            //Defino PreparedStatement
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            //con el query asignado ahora le doy valores a los '?'
+            stmt.setString(1, us.getRun());
+            stmt.setString(2, us.getNombre());
+            stmt.setString(3, us.getApellido());
+            stmt.setString(4, us.getContraseña());
+            stmt.setInt(5, us.getId());
+            //ejecuto la query
+            stmt.executeUpdate();
+            //cierro conexiones
+            stmt.close();
+            cnx.close();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error SQL Modificar Usuario: " + e.getMessage());
+            return false;
+        } catch (Exception e) {
+            System.out.println("Error Modificar Usuario: " + e.getMessage());
+            return false;
+        }
+    }
+     //Buscar id Usuario
      public Usuario buscarPorId(int id) {
         Usuario us = new Usuario();
         try {
@@ -71,6 +99,11 @@ public class Registro {
         }
         return us;
      }
+     
+     
+     
+     
+     
      
     //CRUD ARRENDATARIO
      public boolean agregarArrendatario(Arrendatario ar) {

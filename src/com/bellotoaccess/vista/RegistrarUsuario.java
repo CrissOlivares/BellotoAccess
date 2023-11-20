@@ -1,7 +1,7 @@
 
 package com.bellotoaccess.vista;
 
-import com.bellotoaccess.controlador.Registro;
+import com.bellotoaccess.controlador.RegistroUser;
 import com.bellotoaccess.modelo.Usuario;
 import com.bellotoaccess.utils.Utils;
 import com.bellotoaccess.vistaRegistro.*;
@@ -17,7 +17,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
      * Creates new form RegistrarPersona
 //     */
     Usuario us=new Usuario();
-    Registro r=new Registro();
+    RegistroUser r=new RegistroUser();
     
     public RegistrarUsuario() {
         initComponents();
@@ -50,6 +50,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jbtn_usLimpiar = new javax.swing.JButton();
         jbtn_usAnadir = new javax.swing.JButton();
         jbtn_usVolver = new javax.swing.JButton();
+        jbtn_usModificar = new javax.swing.JButton();
+        jbtn_usEliminar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -191,21 +193,34 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             }
         });
 
+        jbtn_usModificar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_usModificar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_usModificar.setForeground(new java.awt.Color(53, 91, 62));
+        jbtn_usModificar.setText("MODIFICAR");
+        jbtn_usModificar.setBorder(null);
+        jbtn_usModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_usModificarActionPerformed(evt);
+            }
+        });
+
+        jbtn_usEliminar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_usEliminar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_usEliminar.setForeground(new java.awt.Color(53, 91, 62));
+        jbtn_usEliminar.setText("ELIMINAR");
+        jbtn_usEliminar.setBorder(null);
+        jbtn_usEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_usEliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpanel_usLayout = new javax.swing.GroupLayout(jpanel_us);
         jpanel_us.setLayout(jpanel_usLayout);
         jpanel_usLayout.setHorizontalGroup(
             jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanel_usLayout.createSequentialGroup()
                 .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanel_usLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jbtn_usLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbtn_usAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtn_usVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JLbl_Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpanel_usLayout.createSequentialGroup()
                         .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanel_usLayout.createSequentialGroup()
@@ -229,8 +244,22 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                             .addComponent(jtxt_usId, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpanel_usLayout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addComponent(jLabel4)))
-                .addContainerGap(581, Short.MAX_VALUE))
+                        .addComponent(jLabel4))
+                    .addGroup(jpanel_usLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpanel_usLayout.createSequentialGroup()
+                                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbtn_usLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jbtn_usModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(28, 28, 28)
+                                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jbtn_usVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jbtn_usAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jbtn_usEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JLbl_Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(571, Short.MAX_VALUE))
         );
         jpanel_usLayout.setVerticalGroup(
             jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,7 +293,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_usLayout.createSequentialGroup()
-                        .addComponent(jbtn_usAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbtn_usEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbtn_usAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtn_usModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbtn_usLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -373,7 +406,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                         us.setId(Integer.parseInt(this.jtxt_usId.getText()));
                         us.setRun(this.jtxt_usRun.getText());
                         us.setNombre(this.jtxt_usNombre.getText());
-                        us.setApellido(this.jtxt_usContrasena.getText());
+                        us.setApellido(this.jtxt_usApellido.getText());
                         us.setContraseña(this.jtxt_usContrasena.getText());
                         if (r.agregarUsuario(us)) {
                             JOptionPane.showMessageDialog(rootPane, "Usuario agregado", "Añadir Usuario", JOptionPane.INFORMATION_MESSAGE);
@@ -393,6 +426,30 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private void jbtn_usVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_usVolverActionPerformed
         dispose();
     }//GEN-LAST:event_jbtn_usVolverActionPerformed
+
+    private void jbtn_usModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_usModificarActionPerformed
+       if (!this.jtxt_usId.getText().isBlank()) {
+                    us=r.buscarPorId(Integer.parseInt(this.jtxt_usId.getText()));
+                        if (us.getId()!=0) {
+                        us.setId(Integer.parseInt(this.jtxt_usId.getText()));
+                        us.setRun(this.jtxt_usRun.getText());
+                        us.setNombre(this.jtxt_usNombre.getText());
+                        us.setApellido(this.jtxt_usApellido.getText());
+                        us.setContraseña(this.jtxt_usContrasena.getText());
+                        if (r.modificarUsuario(us)) {
+                            JOptionPane.showMessageDialog(rootPane, "Usuario modificado", "Información", JOptionPane.INFORMATION_MESSAGE);
+                        }else{
+                            JOptionPane.showMessageDialog(rootPane, "Error: usuario no modificado", "Información", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(rootPane, "Error: este usuario No existe", "Información", JOptionPane.ERROR_MESSAGE);
+          }
+    }else{JOptionPane.showMessageDialog(rootPane, "Debe ingresar el id", "informaicon", JOptionPane.ERROR_MESSAGE);}
+    }//GEN-LAST:event_jbtn_usModificarActionPerformed
+
+    private void jbtn_usEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_usEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_usEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -443,7 +500,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton jbtn_usAnadir;
+    private javax.swing.JButton jbtn_usEliminar;
     private javax.swing.JButton jbtn_usLimpiar;
+    private javax.swing.JButton jbtn_usModificar;
     private javax.swing.JButton jbtn_usVolver;
     private javax.swing.JPanel jpanel_us;
     private javax.swing.JTextField jtxt_usApellido;

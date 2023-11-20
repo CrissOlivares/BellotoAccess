@@ -3,7 +3,7 @@ package com.bellotoaccess.vista;
 
 import com.bellotoaccess.bd.Conexion;
 import com.bellotoaccess.controlador.LoginDriver;
-import com.bellotoaccess.controlador.Registro;
+import com.bellotoaccess.controlador.RegistroUser;
 import com.bellotoaccess.modelo.BorradorDataBaseForTest;
 import com.bellotoaccess.utils.Utils;
 import com.bellotoaccess.vistaRegistro.RegistrarArrendatario;
