@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author coh_o
  */
 public class RegistroUser {
-    
+    //CRUD DEL USUARIO VALIDAR EL LOGIN
    public boolean validarUsuario(Usuario us) {
         try {
             Conexion con = new Conexion();
@@ -69,19 +69,14 @@ public class RegistroUser {
       try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            //Declaro un string donde guardo la QUERY para ejecutar en la BD
             String query = "UPDATE usuario SET run_us=?, nombre_us=?,apellido_us=?,pass_us=? WHERE id_us=?";
-            //Defino PreparedStatement
             PreparedStatement stmt = cnx.prepareStatement(query);
-            //con el query asignado ahora le doy valores a los '?'
             stmt.setString(1, us.getRun());
             stmt.setString(2, us.getNombre());
             stmt.setString(3, us.getApellido());
             stmt.setString(4, us.getContraseña());
             stmt.setInt(5, us.getId());
-            //ejecuto la query
             stmt.executeUpdate();
-            //cierro conexiones
             stmt.close();
             cnx.close();
             return true;
@@ -98,15 +93,10 @@ public class RegistroUser {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            //Declaro un string donde guardo la QUERY para ejecutar en la BD
             String query = "DELETE FROM usuario WHERE id_us=?";
-            //Defino PreparedStatement
             PreparedStatement stmt = cnx.prepareStatement(query);
-            //con el query asignado ahora le doy valores a los '?'
             stmt.setInt(1, id);           
-            //ejecuto la query
             stmt.executeUpdate();
-            //cierro conexiones
             stmt.close();
             cnx.close();
             return true;
@@ -124,18 +114,13 @@ public class RegistroUser {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            //Declaro un string donde guardo la QUERY para ejecutar en la BD
             String query = "SELECT * FROM usuario WHERE id_us=?";
-            //Defino PreparedStatement
             PreparedStatement stmt = cnx.prepareStatement(query);
-            //con el query asignado ahora le doy valores a los '?'
             stmt.setInt(1, id);
-            //ejecuto la consulta
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 us.setId(id);
             }
-            //cierro conexiones
             stmt.close();
             cnx.close();
         } catch (SQLException e) {

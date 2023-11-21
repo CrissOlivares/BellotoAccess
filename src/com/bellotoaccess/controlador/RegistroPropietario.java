@@ -17,16 +17,15 @@ import java.sql.SQLException;
  * @author coh_o
  */
 public class RegistroPropietario {
-    //CRUD ARRENDATARIO
+    
+    //CRUD PROPIETARIO 
+    //(NOTA: VERIFICARLO LUEGO EN EL PHP Y EN ORACLE)
      public boolean agregarPropietario(Propietario pr) {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            //Declaro un string donde guardo la QUERY para ejecutar en la BD
             String query = "INSERT INTO propietario (id_pro,depowner_pro, run_pro, nombre_pro, apellido_pro,email_pro,telef_pro) VALUES (?,?, ?, ?, ?,?,?)";
-            //Defino PreparedStatement
             PreparedStatement stmt = cnx.prepareStatement(query);
-            //con el query asignado ahora le doy valores a los '?'
             stmt.setInt(1, pr.getId());
             stmt.setInt(2, pr.getDeptowner());
             stmt.setString(3, pr.getRun());
@@ -34,9 +33,7 @@ public class RegistroPropietario {
             stmt.setString(5, pr.getApellido());
             stmt.setString(6, pr.getEmail());
             stmt.setInt(7, pr.getTelef());
-            //ejecuto la query
             stmt.executeUpdate();
-            //cierro conexiones
             stmt.close();
             cnx.close();
             return true;
@@ -52,11 +49,8 @@ public class RegistroPropietario {
       try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            //Declaro un string donde guardo la QUERY para ejecutar en la BD
             String query = "UPDATE propietario SET depowner_pro=?, run_pro=?, nombre_pro=?, apellido_pro=?,email_pro=?,telef_pro=? WHERE id_pro=?";
-            //Defino PreparedStatement
             PreparedStatement stmt = cnx.prepareStatement(query);
-            //con el query asignado ahora le doy valores a los '?'
             stmt.setInt(1, pr.getDeptowner());         
             stmt.setString(2, pr.getRun());
             stmt.setString(3, pr.getNombre());
@@ -64,9 +58,7 @@ public class RegistroPropietario {
             stmt.setString(5, pr.getEmail());
             stmt.setInt(6, pr.getTelef());
             stmt.setInt(7, pr.getId());
-            //ejecuto la query
             stmt.executeUpdate();
-            //cierro conexiones
             stmt.close();
             cnx.close();
             return true;
@@ -83,15 +75,10 @@ public class RegistroPropietario {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            //Declaro un string donde guardo la QUERY para ejecutar en la BD
             String query = "DELETE FROM propietario WHERE id_pro=?";
-            //Defino PreparedStatement
             PreparedStatement stmt = cnx.prepareStatement(query);
-            //con el query asignado ahora le doy valores a los '?'
             stmt.setInt(1, id);           
-            //ejecuto la query
             stmt.executeUpdate();
-            //cierro conexiones
             stmt.close();
             cnx.close();
             return true;
@@ -109,18 +96,13 @@ public class RegistroPropietario {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            //Declaro un string donde guardo la QUERY para ejecutar en la BD
             String query = "SELECT * FROM propietario WHERE id_pro=?";
-            //Defino PreparedStatement
             PreparedStatement stmt = cnx.prepareStatement(query);
-            //con el query asignado ahora le doy valores a los '?'
             stmt.setInt(1, id);
-            //ejecuto la consulta
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 pr.setId(id);
             }
-            //cierro conexiones
             stmt.close();
             cnx.close();
         } catch (SQLException e) {
