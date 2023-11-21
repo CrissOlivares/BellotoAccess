@@ -27,14 +27,22 @@ public class Utils {
             frame.setIconImage(icono.getImage()); }
         }
         
-        //inputs login
-    public static String obtenerInput(JTextField campo){
-        return campo.getText();//getText es para run email etc
-    }
-    public static String obtenerPassword (JPasswordField campo){
-        return String.valueOf(campo.getPassword());
-    }
-     
+        
+        
+        
+        
+        
+        
+        
+        
+//        //inputs login con el Array
+//    public static String obtenerInput(JTextField campo){
+//        return campo.getText();//getText es para run email etc
+//    }
+//    public static String obtenerPassword (JPasswordField campo){
+//        return String.valueOf(campo.getPassword());
+//    }
+//     
     
     //primer Test XD
 //    public static void cambiarPanel(JFrame frame, JPanel panelPadre,JButton boton,JPanel panelHijo){

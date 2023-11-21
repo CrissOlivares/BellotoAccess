@@ -13,6 +13,7 @@ public class Propietario {
    
 
     public Propietario() {
+        this.id=0;
     }
 
     public Propietario(int id, int deptowner, int telef, String run, String nombre, String apellido, String email) {

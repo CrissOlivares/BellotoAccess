@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.bellotoaccess.vistaRegistro;
 
+import com.bellotoaccess.controlador.RegistroPropietario;
+import com.bellotoaccess.modelo.Propietario;
 import com.bellotoaccess.utils.Utils;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author coh_o
+ * @author Cristian Olivares
  */
 public class RegistrarPropietario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RegistrarPersona
-     */
+    Propietario pr=new Propietario();
+    RegistroPropietario r=new RegistroPropietario();
     public RegistrarPropietario() {
         initComponents();
         Utils.cambiarIconoFrame(this);
@@ -32,21 +31,25 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         JLbl_Icono = new javax.swing.JLabel();
-        jtxt_propRun = new javax.swing.JTextField();
-        jtxt_propNombre = new javax.swing.JTextField();
-        jtxt_propApellido = new javax.swing.JTextField();
-        jtxt_propEmail = new javax.swing.JTextField();
-        jtxt_propTelefono = new javax.swing.JTextField();
+        jbtn_prVolver = new javax.swing.JButton();
+        jbtn_prEliminar = new javax.swing.JButton();
+        jbtn_prModificar = new javax.swing.JButton();
+        jbtn_prLimpiar = new javax.swing.JButton();
+        jbtn_prAnadir = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jtxt_prId = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jtxt_prNumDepto = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jtxt_prRun = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jtxt_prNombre = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jtxt_prApellido = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jtxt_prEmail = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jbtn_limpiarProp = new javax.swing.JButton();
-        jbtn_anadirProp = new javax.swing.JButton();
-        jtxtfecha = new javax.swing.JLabel();
-        jtxt_propFecha = new javax.swing.JTextField();
-        jbtn_cerrarSesion = new javax.swing.JButton();
+        jtxt_prTelefono = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -60,73 +63,99 @@ public class RegistrarPropietario extends javax.swing.JFrame {
 
         JLbl_Icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bellotoaccess/imag/pirncipalg.png"))); // NOI18N
 
-        jtxt_propRun.setBackground(new java.awt.Color(255, 255, 255));
-        jtxt_propRun.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jtxt_propRun.setForeground(new java.awt.Color(153, 153, 153));
-        jtxt_propRun.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_propRunActionPerformed(evt);
+        jbtn_prVolver.setBackground(new java.awt.Color(255, 204, 204));
+        jbtn_prVolver.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_prVolver.setForeground(new java.awt.Color(53, 91, 62));
+        jbtn_prVolver.setText("VOLVER");
+        jbtn_prVolver.setBorder(null);
+        jbtn_prVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtn_prVolverMouseClicked(evt);
             }
         });
-        jtxt_propRun.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtxt_propRunKeyPressed(evt);
+        jbtn_prVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_prVolverActionPerformed(evt);
             }
         });
 
-        jtxt_propNombre.setBackground(new java.awt.Color(255, 255, 255));
-        jtxt_propNombre.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jtxt_propNombre.setForeground(new java.awt.Color(153, 153, 153));
-        jtxt_propNombre.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_prEliminar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_prEliminar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_prEliminar.setForeground(new java.awt.Color(53, 91, 62));
+        jbtn_prEliminar.setText("ELIMINAR");
+        jbtn_prEliminar.setBorder(null);
+        jbtn_prEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_propNombreActionPerformed(evt);
-            }
-        });
-        jtxt_propNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtxt_propNombreKeyPressed(evt);
+                jbtn_prEliminarActionPerformed(evt);
             }
         });
 
-        jtxt_propApellido.setBackground(new java.awt.Color(255, 255, 255));
-        jtxt_propApellido.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jtxt_propApellido.setForeground(new java.awt.Color(153, 153, 153));
-        jtxt_propApellido.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_prModificar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_prModificar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_prModificar.setForeground(new java.awt.Color(53, 91, 62));
+        jbtn_prModificar.setText("MODIFICAR");
+        jbtn_prModificar.setBorder(null);
+        jbtn_prModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_propApellidoActionPerformed(evt);
-            }
-        });
-        jtxt_propApellido.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtxt_propApellidoKeyPressed(evt);
+                jbtn_prModificarActionPerformed(evt);
             }
         });
 
-        jtxt_propEmail.setBackground(new java.awt.Color(255, 255, 255));
-        jtxt_propEmail.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jtxt_propEmail.setForeground(new java.awt.Color(153, 153, 153));
-        jtxt_propEmail.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_prLimpiar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_prLimpiar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_prLimpiar.setForeground(new java.awt.Color(53, 91, 62));
+        jbtn_prLimpiar.setText("LIMPIAR");
+        jbtn_prLimpiar.setBorder(null);
+        jbtn_prLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_propEmailActionPerformed(evt);
-            }
-        });
-        jtxt_propEmail.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtxt_propEmailKeyPressed(evt);
+                jbtn_prLimpiarActionPerformed(evt);
             }
         });
 
-        jtxt_propTelefono.setBackground(new java.awt.Color(255, 255, 255));
-        jtxt_propTelefono.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jtxt_propTelefono.setForeground(new java.awt.Color(153, 153, 153));
-        jtxt_propTelefono.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_prAnadir.setBackground(new java.awt.Color(2, 150, 100));
+        jbtn_prAnadir.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_prAnadir.setForeground(new java.awt.Color(255, 255, 255));
+        jbtn_prAnadir.setText("AÑADIR");
+        jbtn_prAnadir.setBorder(null);
+        jbtn_prAnadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_propTelefonoActionPerformed(evt);
+                jbtn_prAnadirActionPerformed(evt);
             }
         });
-        jtxt_propTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(53, 91, 62));
+        jLabel9.setText("ID");
+
+        jtxt_prId.setBackground(new java.awt.Color(255, 255, 255));
+        jtxt_prId.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
+        jtxt_prId.setForeground(new java.awt.Color(153, 153, 153));
+        jtxt_prId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_prIdActionPerformed(evt);
+            }
+        });
+        jtxt_prId.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtxt_propTelefonoKeyPressed(evt);
+                jtxt_prIdKeyPressed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(53, 91, 62));
+        jLabel1.setText("NUM. DEPTO");
+
+        jtxt_prNumDepto.setBackground(new java.awt.Color(255, 255, 255));
+        jtxt_prNumDepto.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
+        jtxt_prNumDepto.setForeground(new java.awt.Color(153, 153, 153));
+        jtxt_prNumDepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_prNumDeptoActionPerformed(evt);
+            }
+        });
+        jtxt_prNumDepto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtxt_prNumDeptoKeyPressed(evt);
             }
         });
 
@@ -134,75 +163,89 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(53, 91, 62));
         jLabel4.setText("RUN");
 
+        jtxt_prRun.setBackground(new java.awt.Color(255, 255, 255));
+        jtxt_prRun.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
+        jtxt_prRun.setForeground(new java.awt.Color(153, 153, 153));
+        jtxt_prRun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_prRunActionPerformed(evt);
+            }
+        });
+        jtxt_prRun.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtxt_prRunKeyPressed(evt);
+            }
+        });
+
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(53, 91, 62));
         jLabel5.setText("NOMBRE");
+
+        jtxt_prNombre.setBackground(new java.awt.Color(255, 255, 255));
+        jtxt_prNombre.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
+        jtxt_prNombre.setForeground(new java.awt.Color(153, 153, 153));
+        jtxt_prNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_prNombreActionPerformed(evt);
+            }
+        });
+        jtxt_prNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtxt_prNombreKeyPressed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(53, 91, 62));
         jLabel6.setText("APELLIDO");
 
+        jtxt_prApellido.setBackground(new java.awt.Color(255, 255, 255));
+        jtxt_prApellido.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
+        jtxt_prApellido.setForeground(new java.awt.Color(153, 153, 153));
+        jtxt_prApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_prApellidoActionPerformed(evt);
+            }
+        });
+        jtxt_prApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtxt_prApellidoKeyPressed(evt);
+            }
+        });
+
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(53, 91, 62));
         jLabel7.setText("EMAIL");
+
+        jtxt_prEmail.setBackground(new java.awt.Color(255, 255, 255));
+        jtxt_prEmail.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
+        jtxt_prEmail.setForeground(new java.awt.Color(153, 153, 153));
+        jtxt_prEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_prEmailActionPerformed(evt);
+            }
+        });
+        jtxt_prEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtxt_prEmailKeyPressed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(53, 91, 62));
         jLabel8.setText("TELÉFONO");
 
-        jbtn_limpiarProp.setBackground(new java.awt.Color(255, 255, 255));
-        jbtn_limpiarProp.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jbtn_limpiarProp.setForeground(new java.awt.Color(53, 91, 62));
-        jbtn_limpiarProp.setText("LIMPIAR");
-        jbtn_limpiarProp.setBorder(null);
-        jbtn_limpiarProp.addActionListener(new java.awt.event.ActionListener() {
+        jtxt_prTelefono.setBackground(new java.awt.Color(255, 255, 255));
+        jtxt_prTelefono.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
+        jtxt_prTelefono.setForeground(new java.awt.Color(153, 153, 153));
+        jtxt_prTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_limpiarPropActionPerformed(evt);
+                jtxt_prTelefonoActionPerformed(evt);
             }
         });
-
-        jbtn_anadirProp.setBackground(new java.awt.Color(2, 150, 100));
-        jbtn_anadirProp.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jbtn_anadirProp.setForeground(new java.awt.Color(255, 255, 255));
-        jbtn_anadirProp.setText("AÑADIR");
-        jbtn_anadirProp.setBorder(null);
-        jbtn_anadirProp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_anadirPropActionPerformed(evt);
-            }
-        });
-
-        jtxtfecha.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        jtxtfecha.setForeground(new java.awt.Color(53, 91, 62));
-        jtxtfecha.setText("FECHA");
-
-        jtxt_propFecha.setBackground(new java.awt.Color(255, 255, 255));
-        jtxt_propFecha.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jtxt_propFecha.setForeground(new java.awt.Color(153, 153, 153));
-        jtxt_propFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_propFechaActionPerformed(evt);
-            }
-        });
-        jtxt_propFecha.addKeyListener(new java.awt.event.KeyAdapter() {
+        jtxt_prTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtxt_propFechaKeyPressed(evt);
-            }
-        });
-
-        jbtn_cerrarSesion.setBackground(new java.awt.Color(255, 204, 204));
-        jbtn_cerrarSesion.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jbtn_cerrarSesion.setForeground(new java.awt.Color(53, 91, 62));
-        jbtn_cerrarSesion.setText("VOLVER");
-        jbtn_cerrarSesion.setBorder(null);
-        jbtn_cerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbtn_cerrarSesionMouseClicked(evt);
-            }
-        });
-        jbtn_cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_cerrarSesionActionPerformed(evt);
+                jtxt_prTelefonoKeyPressed(evt);
             }
         });
 
@@ -211,89 +254,92 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jbtn_limpiarProp, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbtn_anadirProp, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtn_cerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JLbl_Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(100, 100, 100)
-                                    .addComponent(jtxt_propRun, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(11, 11, 11)
-                                    .addComponent(jLabel7))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel5))
-                                        .addGap(52, 52, 52)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jtxt_propNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jtxt_propApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jtxt_propEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel8)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addGap(13, 13, 13)
-                                                .addComponent(jtxtfecha)))
-                                        .addGap(46, 46, 46)
-                                        .addComponent(jtxt_propTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jtxt_propFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(581, Short.MAX_VALUE))
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel8))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtxt_prTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxt_prNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxt_prApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxt_prEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxt_prRun, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxt_prNumDepto, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxt_prId, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbtn_prLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jbtn_prModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbtn_prAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jbtn_prVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jbtn_prEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(JLbl_Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(562, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtxt_prId, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxt_propRun, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtxt_prNumDepto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
+                        .addComponent(jtxt_prRun, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jtxt_propNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
-                                .addGap(18, 18, 18)
-                                .addComponent(jtxt_propApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addComponent(jtxt_propEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxt_propTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxt_propFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtfecha))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jbtn_anadirProp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtxt_prNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtxt_prApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtxt_prEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jtxt_prTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jbtn_prEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbtn_limpiarProp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbtn_cerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10))
-                    .addComponent(JLbl_Icono, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(52, 52, 52))
+                            .addComponent(jbtn_prAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtn_prModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbtn_prLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtn_prVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(JLbl_Icono))
+                .addGap(62, 62, 62))
         );
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1060, 510));
@@ -339,69 +385,140 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtxt_propRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_propRunActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propRunActionPerformed
+    private void jbtn_prAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_prAnadirActionPerformed
+        if (!this.jtxt_prId.getText().isBlank()) {
+            pr=r.buscarPorIdPr(Integer.parseInt(this.jtxt_prId.getText()));}
+        if (pr.getId()==0) {
+            pr.setId(Integer.parseInt(this.jtxt_prId.getText()));
+            pr.setDeptowner(Integer.parseInt(this.jtxt_prNumDepto.getText()));
+            pr.setRun(this.jtxt_prRun.getText());
+            pr.setNombre(this.jtxt_prNombre.getText());
+            pr.setApellido(this.jtxt_prApellido.getText());
+            pr.setEmail(this.jtxt_prEmail.getText());
+            pr.setTelef(Integer.parseInt(this.jtxt_prTelefono.getText()));
+            if (r.agregarPropietario(pr)) {
+                JOptionPane.showMessageDialog(rootPane, "Propietario agregado", "Añadir Usuario", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Error: Propietario no agregado", "Añadir Usuario", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Error: este Propietario ya existe", "Añadir Usuario", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jbtn_prAnadirActionPerformed
 
-    private void jtxt_propRunKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_propRunKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propRunKeyPressed
+    private void jbtn_prLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_prLimpiarActionPerformed
+        this.jtxt_prId.setText("");
+        this.jtxt_prNumDepto.setText("");
+        this.jtxt_prRun.setText("");
+        this.jtxt_prNombre.setText("");
+        this.jtxt_prApellido.setText("");
+        this.jtxt_prEmail.setText("");
+        this.jtxt_prTelefono.setText("");
+    }//GEN-LAST:event_jbtn_prLimpiarActionPerformed
 
-    private void jtxt_propNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_propNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propNombreActionPerformed
+    private void jbtn_prModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_prModificarActionPerformed
+        if (!this.jtxt_prId.getText().isBlank()) {
+            pr=r.buscarPorIdPr(Integer.parseInt(this.jtxt_prId.getText()));
+            if (pr.getId()!=0) {
+                pr.setId(Integer.parseInt(this.jtxt_prId.getText()));
+                pr.setDeptowner(Integer.parseInt(this.jtxt_prNumDepto.getText()));
+                pr.setRun(this.jtxt_prRun.getText());
+                pr.setNombre(this.jtxt_prNombre.getText());
+                pr.setApellido(this.jtxt_prApellido.getText());
+                pr.setEmail(this.jtxt_prEmail.getText());
+                pr.setTelef(Integer.parseInt(this.jtxt_prTelefono.getText()));
+                if (r.modificarPropietario(pr)) {
+                    JOptionPane.showMessageDialog(rootPane, "Propietario modificado", "Información", JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "Error: Propietario no modificado", "Información", JOptionPane.ERROR_MESSAGE);
+                }
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Error: este Propietario No existe", "Información", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Debe ingresar el id", "Información", JOptionPane.ERROR_MESSAGE);}
+    }//GEN-LAST:event_jbtn_prModificarActionPerformed
 
-    private void jtxt_propNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_propNombreKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propNombreKeyPressed
+    private void jbtn_prEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_prEliminarActionPerformed
+        if (!this.jtxt_prId.getText().isBlank()) {
+            pr=r.buscarPorIdPr(Integer.parseInt(this.jtxt_prId.getText()));
+            if (pr.getId()!=0) {
+                pr.setId(Integer.parseInt(this.jtxt_prId.getText()));
+                if (r.eliminarPropietario(Integer.parseInt(this.jtxt_prId.getText()))) {
+                    JOptionPane.showMessageDialog(rootPane, "Propietario eliminado", "Información", JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "Error: Propietario no eliminado", "Información", JOptionPane.ERROR_MESSAGE);
+                }
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Error: este Propietario No existe", "Información", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Debe ingresar el id", "Información", JOptionPane.ERROR_MESSAGE);}
+    }//GEN-LAST:event_jbtn_prEliminarActionPerformed
 
-    private void jtxt_propApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_propApellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propApellidoActionPerformed
-
-    private void jtxt_propApellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_propApellidoKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propApellidoKeyPressed
-
-    private void jtxt_propEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_propEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propEmailActionPerformed
-
-    private void jtxt_propEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_propEmailKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propEmailKeyPressed
-
-    private void jtxt_propTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_propTelefonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propTelefonoActionPerformed
-
-    private void jtxt_propTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_propTelefonoKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propTelefonoKeyPressed
-
-    private void jbtn_limpiarPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_limpiarPropActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_limpiarPropActionPerformed
-
-    private void jbtn_anadirPropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_anadirPropActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_anadirPropActionPerformed
-
-    private void jtxt_propFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_propFechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propFechaActionPerformed
-
-    private void jtxt_propFechaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_propFechaKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_propFechaKeyPressed
-
-    private void jbtn_cerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionMouseClicked
-
-    }//GEN-LAST:event_jbtn_cerrarSesionMouseClicked
-
-    private void jbtn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionActionPerformed
+    private void jbtn_prVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_prVolverActionPerformed
         dispose();
-    }//GEN-LAST:event_jbtn_cerrarSesionActionPerformed
+    }//GEN-LAST:event_jbtn_prVolverActionPerformed
+
+    private void jbtn_prVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_prVolverMouseClicked
+
+    }//GEN-LAST:event_jbtn_prVolverMouseClicked
+
+    private void jtxt_prIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_prIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prIdActionPerformed
+
+    private void jtxt_prIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_prIdKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prIdKeyPressed
+
+    private void jtxt_prNumDeptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_prNumDeptoActionPerformed
+
+    }//GEN-LAST:event_jtxt_prNumDeptoActionPerformed
+
+    private void jtxt_prNumDeptoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_prNumDeptoKeyPressed
+
+    }//GEN-LAST:event_jtxt_prNumDeptoKeyPressed
+
+    private void jtxt_prRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_prRunActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prRunActionPerformed
+
+    private void jtxt_prRunKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_prRunKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prRunKeyPressed
+
+    private void jtxt_prNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_prNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prNombreActionPerformed
+
+    private void jtxt_prNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_prNombreKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prNombreKeyPressed
+
+    private void jtxt_prApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_prApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prApellidoActionPerformed
+
+    private void jtxt_prApellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_prApellidoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prApellidoKeyPressed
+
+    private void jtxt_prEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_prEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prEmailActionPerformed
+
+    private void jtxt_prEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_prEmailKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prEmailKeyPressed
+
+    private void jtxt_prTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_prTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prTelefonoActionPerformed
+
+    private void jtxt_prTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_prTelefonoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_prTelefonoKeyPressed
 
     /**
      * @param args the command line arguments
@@ -441,24 +558,28 @@ public class RegistrarPropietario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLbl_Icono;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton jbtn_anadirProp;
-    private javax.swing.JButton jbtn_cerrarSesion;
-    private javax.swing.JButton jbtn_limpiarProp;
-    private javax.swing.JTextField jtxt_propApellido;
-    private javax.swing.JTextField jtxt_propEmail;
-    private javax.swing.JTextField jtxt_propFecha;
-    private javax.swing.JTextField jtxt_propNombre;
-    private javax.swing.JTextField jtxt_propRun;
-    private javax.swing.JTextField jtxt_propTelefono;
-    private javax.swing.JLabel jtxtfecha;
+    private javax.swing.JButton jbtn_prAnadir;
+    private javax.swing.JButton jbtn_prEliminar;
+    private javax.swing.JButton jbtn_prLimpiar;
+    private javax.swing.JButton jbtn_prModificar;
+    private javax.swing.JButton jbtn_prVolver;
+    private javax.swing.JTextField jtxt_prApellido;
+    private javax.swing.JTextField jtxt_prEmail;
+    private javax.swing.JTextField jtxt_prId;
+    private javax.swing.JTextField jtxt_prNombre;
+    private javax.swing.JTextField jtxt_prNumDepto;
+    private javax.swing.JTextField jtxt_prRun;
+    private javax.swing.JTextField jtxt_prTelefono;
     // End of variables declaration//GEN-END:variables
 }

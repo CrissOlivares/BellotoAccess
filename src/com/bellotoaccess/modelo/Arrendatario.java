@@ -9,11 +9,13 @@ import java.util.Date;
  */
 public class Arrendatario {
     
-    private int id,numdept,telef;
+    private int id;
+    private int numdept,telef;
     private String run,nombre,apellido,email;
     
 
     public Arrendatario() {
+        this.id=0;
     }
 
     public Arrendatario(int id, int numdept, int telef, String run, String nombre, String apellido, String email) {

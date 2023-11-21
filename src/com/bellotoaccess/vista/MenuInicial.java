@@ -42,16 +42,13 @@ public class MenuInicial extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jbtn_cerrarSesion = new javax.swing.JButton();
         jbtn_irAnadirArren = new javax.swing.JButton();
-        jbtn_modificar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         JLbl_IconoUsuario = new javax.swing.JLabel();
         JLbl_MenPrincipal = new javax.swing.JLabel();
         JLbl_MenPrincipal4 = new javax.swing.JLabel();
         JLbl_MenPrincipal5 = new javax.swing.JLabel();
         JLbl_Icono = new javax.swing.JLabel();
-        JBtn_Eliminar_arren = new javax.swing.JButton();
         jbtn_irAnadirProp = new javax.swing.JButton();
-        JLbl_MenPrincipal3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BellotoAccess - Sistema administrativo de Condominios");
@@ -152,19 +149,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 jbtn_irAnadirArrenActionPerformed(evt);
             }
         });
-        jPanel2.add(jbtn_irAnadirArren, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 170, 25));
-
-        jbtn_modificar.setBackground(new java.awt.Color(255, 255, 255));
-        jbtn_modificar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jbtn_modificar.setForeground(new java.awt.Color(53, 91, 62));
-        jbtn_modificar.setText("MODIFICAR");
-        jbtn_modificar.setBorder(null);
-        jbtn_modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_modificarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jbtn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 140, 25));
+        jPanel2.add(jbtn_irAnadirArren, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 170, 25));
 
         jPanel3.setBackground(new java.awt.Color(53, 91, 62));
 
@@ -231,18 +216,6 @@ public class MenuInicial extends javax.swing.JFrame {
         JLbl_Icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bellotoaccess/imag/pirncipalg.png"))); // NOI18N
         jPanel2.add(JLbl_Icono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 160, -1));
 
-        JBtn_Eliminar_arren.setBackground(new java.awt.Color(255, 255, 255));
-        JBtn_Eliminar_arren.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        JBtn_Eliminar_arren.setForeground(new java.awt.Color(53, 91, 62));
-        JBtn_Eliminar_arren.setText("ELIMINAR");
-        JBtn_Eliminar_arren.setBorder(null);
-        JBtn_Eliminar_arren.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBtn_Eliminar_arrenActionPerformed(evt);
-            }
-        });
-        jPanel2.add(JBtn_Eliminar_arren, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 140, 25));
-
         jbtn_irAnadirProp.setBackground(new java.awt.Color(255, 255, 255));
         jbtn_irAnadirProp.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jbtn_irAnadirProp.setForeground(new java.awt.Color(53, 91, 62));
@@ -254,13 +227,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 jbtn_irAnadirPropActionPerformed(evt);
             }
         });
-        jPanel2.add(jbtn_irAnadirProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 170, 25));
-
-        JLbl_MenPrincipal3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        JLbl_MenPrincipal3.setForeground(new java.awt.Color(53, 91, 62));
-        JLbl_MenPrincipal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLbl_MenPrincipal3.setText("AÑADIR");
-        jPanel2.add(JLbl_MenPrincipal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 70, 150, 34));
+        jPanel2.add(jbtn_irAnadirProp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 170, 25));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -281,10 +248,6 @@ public class MenuInicial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_modificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_modificarActionPerformed
-
     private void jbtn_irAnadirArrenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_irAnadirArrenActionPerformed
        RegistrarArrendatario rear=new RegistrarArrendatario();
         rear.setVisible(true);
@@ -303,10 +266,6 @@ public class MenuInicial extends javax.swing.JFrame {
     private void jTxt_runUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxt_runUsuarioActionPerformed
 
     }//GEN-LAST:event_jTxt_runUsuarioActionPerformed
-
-    private void JBtn_Eliminar_arrenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtn_Eliminar_arrenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBtn_Eliminar_arrenActionPerformed
 
     private void jbtn_cerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_cerrarSesionMouseClicked
       
@@ -361,11 +320,9 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBtn_Eliminar_arren;
     private javax.swing.JLabel JLbl_Icono;
     private javax.swing.JLabel JLbl_IconoUsuario;
     private javax.swing.JLabel JLbl_MenPrincipal;
-    private javax.swing.JLabel JLbl_MenPrincipal3;
     private javax.swing.JLabel JLbl_MenPrincipal4;
     private javax.swing.JLabel JLbl_MenPrincipal5;
     private javax.swing.JLabel jLabel1;
@@ -379,7 +336,6 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JButton jbtn_cerrarSesion;
     private javax.swing.JButton jbtn_irAnadirArren;
     private javax.swing.JButton jbtn_irAnadirProp;
-    private javax.swing.JButton jbtn_modificar;
     // End of variables declaration//GEN-END:variables
 
 //     private void mostrarTabla() {

@@ -41,7 +41,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jtxt_usRun = new javax.swing.JTextField();
         jtxt_usNombre = new javax.swing.JTextField();
         jtxt_usApellido = new javax.swing.JTextField();
-        jtxt_usContrasena = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -52,6 +51,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jbtn_usVolver = new javax.swing.JButton();
         jbtn_usModificar = new javax.swing.JButton();
         jbtn_usEliminar = new javax.swing.JButton();
+        jtxt_usContrasena = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -118,20 +118,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jtxt_usApellido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jtxt_usApellidoKeyPressed(evt);
-            }
-        });
-
-        jtxt_usContrasena.setBackground(new java.awt.Color(255, 255, 255));
-        jtxt_usContrasena.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
-        jtxt_usContrasena.setForeground(new java.awt.Color(153, 153, 153));
-        jtxt_usContrasena.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_usContrasenaActionPerformed(evt);
-            }
-        });
-        jtxt_usContrasena.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtxt_usContrasenaKeyPressed(evt);
             }
         });
 
@@ -224,27 +210,23 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     .addGroup(jpanel_usLayout.createSequentialGroup()
                         .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanel_usLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
+                                .addGap(42, 42, 42)
                                 .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel5))
-                                    .addGroup(jpanel_usLayout.createSequentialGroup()
-                                        .addGap(23, 23, 23)
-                                        .addComponent(jLabel1))))
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel4))
+                                    .addComponent(jLabel6)))
                             .addGroup(jpanel_usLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
+                                .addContainerGap()
                                 .addComponent(jLabel7)))
-                        .addGap(36, 36, 36)
-                        .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxt_usNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxt_usApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxt_usContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxt_usRun, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxt_usId, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpanel_usLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel4))
+                        .addGap(47, 47, 47)
+                        .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtxt_usNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                            .addComponent(jtxt_usApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                            .addComponent(jtxt_usRun, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                            .addComponent(jtxt_usId, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                            .addComponent(jtxt_usContrasena)))
                     .addGroup(jpanel_usLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,25 +254,22 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel1)))
                 .addGap(18, 18, 18)
-                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_usLayout.createSequentialGroup()
-                        .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_usLayout.createSequentialGroup()
-                                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_usLayout.createSequentialGroup()
-                                        .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jtxt_usRun, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel4))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jtxt_usNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(18, 18, 18)
-                                .addComponent(jtxt_usApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
-                        .addComponent(jtxt_usContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtxt_usRun, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtxt_usNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtxt_usApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jtxt_usContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_usLayout.createSequentialGroup()
                         .addComponent(jbtn_usEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,14 +361,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxt_usApellidoKeyPressed
 
-    private void jtxt_usContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_usContrasenaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_usContrasenaActionPerformed
-
-    private void jtxt_usContrasenaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_usContrasenaKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_usContrasenaKeyPressed
-
     private void jbtn_usLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_usLimpiarActionPerformed
                 this.jtxt_usId.setText("");
                 this.jtxt_usRun.setText("");
@@ -444,11 +415,25 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     }else{
                         JOptionPane.showMessageDialog(rootPane, "Error: este usuario No existe", "Información", JOptionPane.ERROR_MESSAGE);
           }
-    }else{JOptionPane.showMessageDialog(rootPane, "Debe ingresar el id", "informaicon", JOptionPane.ERROR_MESSAGE);}
+    }else{
+           JOptionPane.showMessageDialog(rootPane, "Debe ingresar el id", "informacion", JOptionPane.ERROR_MESSAGE);}
     }//GEN-LAST:event_jbtn_usModificarActionPerformed
 
     private void jbtn_usEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_usEliminarActionPerformed
-        // TODO add your handling code here:
+      if (!this.jtxt_usId.getText().isBlank()) {
+                    us=r.buscarPorId(Integer.parseInt(this.jtxt_usId.getText()));
+                        if (us.getId()!=0) {
+                        us.setId(Integer.parseInt(this.jtxt_usId.getText()));
+                        if (r.eliminarUsuario(Integer.parseInt(this.jtxt_usId.getText()))) {
+                            JOptionPane.showMessageDialog(rootPane, "Usuario eliminado", "Información", JOptionPane.INFORMATION_MESSAGE);
+                        }else{
+                            JOptionPane.showMessageDialog(rootPane, "Error: usuario no eliminado", "Información", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(rootPane, "Error: este usuario No existe", "Información", JOptionPane.ERROR_MESSAGE);
+          }
+    }else{
+           JOptionPane.showMessageDialog(rootPane, "Debe ingresar el id", "informaicon", JOptionPane.ERROR_MESSAGE);}
     }//GEN-LAST:event_jbtn_usEliminarActionPerformed
 
     /**
@@ -506,7 +491,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jbtn_usVolver;
     private javax.swing.JPanel jpanel_us;
     private javax.swing.JTextField jtxt_usApellido;
-    private javax.swing.JTextField jtxt_usContrasena;
+    private javax.swing.JPasswordField jtxt_usContrasena;
     private javax.swing.JTextField jtxt_usId;
     private javax.swing.JTextField jtxt_usNombre;
     private javax.swing.JTextField jtxt_usRun;
