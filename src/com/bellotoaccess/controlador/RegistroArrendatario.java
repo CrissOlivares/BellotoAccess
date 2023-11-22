@@ -7,10 +7,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
- * @author coh_o
+ * @author Cristian Olivares 21-11
  */
 public class RegistroArrendatario {
     //CRUD ARRENDATARIO
@@ -106,4 +107,38 @@ public class RegistroArrendatario {
         }
         return ar;
      }
+     
+     public ArrayList<Arrendatario> ListaArrendatario() {
+        ArrayList<Arrendatario> listaAr = new ArrayList<Arrendatario>();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            //Declaro un string donde guardo la QUERY para ejecutar en la BD
+            String query = "SELECT * FROM arrendatario order by id_ar";
+            //Defino PreparedStatement
+            PreparedStatement stmt = cnx.prepareStatement(query);
+             //ejecuto la consulta
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {                
+                Arrendatario ar = new Arrendatario();
+                ar.setId(rs.getInt("id_ar"));
+                ar.setNumdept(rs.getInt("numdept_ar"));
+                ar.setRun(rs.getString("run_ar"));
+                ar.setNombre(rs.getString("nombre_ar")); 
+                ar.setApellido(rs.getString("apellido_ar"));
+                ar.setEmail(rs.getString("email_ar"));
+                ar.setTelef(rs.getInt("telef_ar"));
+                listaAr.add(ar);
+            }
+            //cierro conexiones
+            stmt.close();
+            cnx.close();
+        } catch (SQLException e) {
+            System.out.println("Error SQL Listar Arrendatario: " + e.getMessage());
+
+        } catch (Exception e) {
+            System.out.println("Error Listar Arrendatario: " + e.getMessage());
+        }
+        return listaAr;
+    }
 }

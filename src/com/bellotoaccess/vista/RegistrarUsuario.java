@@ -5,7 +5,9 @@ import com.bellotoaccess.controlador.RegistroUser;
 import com.bellotoaccess.modelo.Usuario;
 import com.bellotoaccess.utils.Utils;
 import com.bellotoaccess.vistaRegistro.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -52,6 +54,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jbtn_usModificar = new javax.swing.JButton();
         jbtn_usEliminar = new javax.swing.JButton();
         jtxt_usContrasena = new javax.swing.JPasswordField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtable_us = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -201,6 +206,41 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             }
         });
 
+        jtable_us.setBackground(new java.awt.Color(53, 91, 62));
+        jtable_us.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        jtable_us.setForeground(new java.awt.Color(245, 236, 228));
+        jtable_us.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID USUARIO", "NOMBRE", "APELLIDO", "RUN"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtable_us);
+        if (jtable_us.getColumnModel().getColumnCount() > 0) {
+            jtable_us.getColumnModel().getColumn(1).setResizable(false);
+            jtable_us.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bellotoaccess/imag/Act.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpanel_usLayout = new javax.swing.GroupLayout(jpanel_us);
         jpanel_us.setLayout(jpanel_usLayout);
         jpanel_usLayout.setHorizontalGroup(
@@ -230,18 +270,23 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     .addGroup(jpanel_usLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanel_usLayout.createSequentialGroup()
-                                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbtn_usLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jbtn_usModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(28, 28, 28)
-                                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jbtn_usVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jbtn_usAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jbtn_usLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtn_usModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbtn_usEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(28, 28, 28)
+                        .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jbtn_usVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtn_usAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addComponent(JLbl_Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(571, Short.MAX_VALUE))
+                .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpanel_usLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpanel_usLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         jpanel_usLayout.setVerticalGroup(
             jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,7 +314,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jtxt_usContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_usLayout.createSequentialGroup()
                         .addComponent(jbtn_usEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,10 +325,15 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbtn_usLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbtn_usVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10))
+                            .addComponent(jbtn_usVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(JLbl_Icono, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(52, 52, 52))
+                .addGap(62, 62, 62))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_usLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.add(jpanel_us, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1060, 510));
@@ -301,7 +351,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(158, 158, 158)
                 .addComponent(jLabel3)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(632, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,13 +361,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 40));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 911, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,6 +417,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 this.jtxt_usNombre.setText("");
                 this.jtxt_usApellido.setText("");
                 this.jtxt_usContrasena.setText("");
+                
                
     }//GEN-LAST:event_jbtn_usLimpiarActionPerformed
 
@@ -409,6 +460,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                         us.setContraseña(this.jtxt_usContrasena.getText());
                         if (r.modificarUsuario(us)) {
                             JOptionPane.showMessageDialog(rootPane, "Usuario modificado", "Información", JOptionPane.INFORMATION_MESSAGE);
+                             
                         }else{
                             JOptionPane.showMessageDialog(rootPane, "Error: usuario no modificado", "Información", JOptionPane.ERROR_MESSAGE);
                         }
@@ -435,6 +487,10 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }else{
            JOptionPane.showMessageDialog(rootPane, "Debe ingresar el id", "informaicon", JOptionPane.ERROR_MESSAGE);}
     }//GEN-LAST:event_jbtn_usEliminarActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+       mostrarTablaUs();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -473,10 +529,27 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             }
         });
     }
-
+private void mostrarTablaUs() {
+        //defino variables para rescatar del objeto usuario
+        int id;
+        String nombre, apellido, run;
+        
+        DefaultTableModel modelo=(DefaultTableModel) this.jtable_us.getModel();
+        //para que no se duplique la información
+        modelo.setRowCount(0);
+        ArrayList<Usuario> lista=r.ListaUsuarios();
+        for (Usuario usuario : lista) {
+            id=usuario.getId();
+            nombre=usuario.getNombre();
+            apellido=usuario.getApellido();
+            run=usuario.getRun();
+            modelo.addRow(new Object[]{id,nombre,apellido,run});
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLbl_Icono;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -484,12 +557,14 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtn_usAnadir;
     private javax.swing.JButton jbtn_usEliminar;
     private javax.swing.JButton jbtn_usLimpiar;
     private javax.swing.JButton jbtn_usModificar;
     private javax.swing.JButton jbtn_usVolver;
     private javax.swing.JPanel jpanel_us;
+    private javax.swing.JTable jtable_us;
     private javax.swing.JTextField jtxt_usApellido;
     private javax.swing.JPasswordField jtxt_usContrasena;
     private javax.swing.JTextField jtxt_usId;
@@ -497,3 +572,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField jtxt_usRun;
     // End of variables declaration//GEN-END:variables
 }
+
+
+
+
+

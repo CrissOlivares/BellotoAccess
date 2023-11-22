@@ -9,12 +9,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
-
+//DEJAR IMPORTS POR SI LOS USO MAS ADELANTE
 /**
  *
- * @author coh_o
+ * @author Cristian Olivares 19-11
  */
 public class RegistroUser {
     //CRUD DEL USUARIO VALIDAR EL LOGIN
@@ -130,6 +131,37 @@ public class RegistroUser {
         }
         return us;
      }  
+     
+     public ArrayList<Usuario> ListaUsuarios() {
+        ArrayList<Usuario> listaUsu = new ArrayList<Usuario>();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            //Declaro un string donde guardo la QUERY para ejecutar en la BD
+            String query = "SELECT * FROM usuario order by id_us";
+            //Defino PreparedStatement
+            PreparedStatement stmt = cnx.prepareStatement(query);
+             //ejecuto la consulta
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {                
+                Usuario us = new Usuario();
+                us.setId(rs.getInt("id_us"));
+                us.setNombre(rs.getString("nombre_us"));
+                us.setApellido(rs.getString("apellido_us"));
+                us.setRun(rs.getString("run_us"));
+                listaUsu.add(us);
+            }
+            //cierro conexiones
+            stmt.close();
+            cnx.close();
+        } catch (SQLException e) {
+            System.out.println("Error SQL Listar Usuario: " + e.getMessage());
+
+        } catch (Exception e) {
+            System.out.println("Error Listar Usuario: " + e.getMessage());
+        }
+        return listaUsu;
+    }
     }
 
 

@@ -11,10 +11,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.ArrayList;
+//DEJAR IMPORTS POR SI LOS USO MAS ADELANTE
 /**
  *
- * @author coh_o
+ * @author Cristian Olivares 20-11
  */
 public class RegistroPropietario {
     
@@ -112,4 +113,37 @@ public class RegistroPropietario {
         }
         return pr;
      }
+     public ArrayList<Propietario> ListaPropietario() {
+        ArrayList<Propietario> listaPr = new ArrayList<Propietario>();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            //Declaro un string donde guardo la QUERY para ejecutar en la BD
+            String query = "SELECT * FROM propietario order by id_pro";
+            //Defino PreparedStatement
+            PreparedStatement stmt = cnx.prepareStatement(query);
+             //ejecuto la consulta
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {                
+                Propietario pro = new Propietario();
+                pro.setId(rs.getInt("id_pro"));
+                pro.setDeptowner(rs.getInt("depowner_pro"));
+                pro.setRun(rs.getString("run_pro"));
+                pro.setNombre(rs.getString("nombre_pro")); 
+                pro.setApellido(rs.getString("apellido_pro"));
+                pro.setEmail(rs.getString("email_pro"));
+                pro.setTelef(rs.getInt("telef_pro"));
+                listaPr.add(pro);
+            }
+            //cierro conexiones
+            stmt.close();
+            cnx.close();
+        } catch (SQLException e) {
+            System.out.println("Error SQL Listar Propietario: " + e.getMessage());
+
+        } catch (Exception e) {
+            System.out.println("Error Listar Propietario: " + e.getMessage());
+        }
+        return listaPr;
+    }
 }
