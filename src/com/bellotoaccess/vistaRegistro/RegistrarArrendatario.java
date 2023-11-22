@@ -57,6 +57,7 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtable_ar = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        jbtn_arBuscar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -257,7 +258,7 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
         });
 
         jtable_ar.setBackground(new java.awt.Color(53, 91, 62));
-        jtable_ar.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 10)); // NOI18N
+        jtable_ar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
         jtable_ar.setForeground(new java.awt.Color(245, 236, 228));
         jtable_ar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -276,6 +277,17 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
+            }
+        });
+
+        jbtn_arBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_arBuscar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jbtn_arBuscar.setForeground(new java.awt.Color(53, 91, 62));
+        jbtn_arBuscar.setText("BUSCAR POR ID");
+        jbtn_arBuscar.setBorder(null);
+        jbtn_arBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_arBuscarActionPerformed(evt);
             }
         });
 
@@ -318,16 +330,19 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
                             .addComponent(jtxt_arrenEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtxt_arrenRun, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtxt_arrenNumDepto, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(71, 71, 71)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(160, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbtn_arBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addComponent(JLbl_Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(149, 149, 149))))
+                        .addGap(149, 149, 149))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,7 +396,8 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLbl_Icono)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jbtn_arBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -537,7 +553,7 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
 
     private void jbtn_arsAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_arsAnadirActionPerformed
         if (!this.jtxt_arrenId.getText().isBlank()) {
-            ar=r.buscarPorIdArr(Integer.parseInt(this.jtxt_arrenId.getText()));}
+            ar=r.buscarPorIdArr(Integer.parseInt(this.jtxt_arrenId.getText()));
         if (ar.getId()==0) {
                 ar.setId(Integer.parseInt(this.jtxt_arrenId.getText()));
                 ar.setNumdept(Integer.parseInt(this.jtxt_arrenNumDepto.getText()));
@@ -554,7 +570,7 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(rootPane, "Error: este Arrendatario ya existe", "Añadir Usuario", JOptionPane.ERROR_MESSAGE);
         }
-
+        }
     }//GEN-LAST:event_jbtn_arsAnadirActionPerformed
 
     private void jtxt_arrenIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_arrenIdActionPerformed
@@ -568,6 +584,18 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         mostrarTabla();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jbtn_arBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_arBuscarActionPerformed
+//         if (!this.jtxt_arrenId.getText().isBlank()) {
+//            ar=r.buscarPorIdArr(Integer.parseInt(this.jtxt_arrenId.getText()));
+//            if (ar.getId()!=0) {
+//                this.jtxt_arrenId.setEnabled(true);
+//            }else{
+//                JOptionPane.showMessageDialog(rootPane, "Arrendatario NO EXISTE!!", "Consulta de Datos", JOptionPane.ERROR_MESSAGE);
+//            }
+//        }else{
+//         }
+    }//GEN-LAST:event_jbtn_arBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -640,6 +668,7 @@ public class RegistrarArrendatario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbtn_arBuscar;
     private javax.swing.JButton jbtn_arEliminar;
     private javax.swing.JButton jbtn_arLimpiar;
     private javax.swing.JButton jbtn_arModificar;

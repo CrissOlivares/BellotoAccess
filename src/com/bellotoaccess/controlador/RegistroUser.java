@@ -2,9 +2,9 @@
 package com.bellotoaccess.controlador;
 
 import com.bellotoaccess.bd.Conexion;
-import com.bellotoaccess.modelo.Arrendatario;
 import com.bellotoaccess.modelo.BorradorPersona;
 import com.bellotoaccess.modelo.Usuario;
+import com.mysql.cj.conf.PropertyKey;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,36 +12,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import java.sql.*;
+
 //DEJAR IMPORTS POR SI LOS USO MAS ADELANTE
 /**
  *
  * @author Cristian Olivares 19-11
  */
 public class RegistroUser {
-    //CRUD DEL USUARIO VALIDAR EL LOGIN
-   public boolean validarUsuario(Usuario us) {
-        try {
-            Conexion con = new Conexion();
-            Connection cnx = con.obtenerConexion();
-            String query = "SELECT * FROM usuarios WHERE run_us=´run_us' and pass_us='pass_us'";
-            PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setString(1, us.getRun());
-            stmt.setString(2, us.getContraseña());
-            stmt.executeUpdate();
-            stmt.close();
-            cnx.close();
-            return true;
-        } catch (SQLException e) {
-            System.out.println("Error al ingresar con sus credenciales: " + e.getMessage());
-            return false;
-        } catch (Exception e) {
-            System.out.println("Error ingresar con sus credenciales: " + e.getMessage());
-            return false;
-        }
-    }
+
     
-    
-    //CRUD PARA LOS USUARIOS, AGREGAR USUARIO
+    //CRUD DEL USUARIO
      public boolean agregarUsuario(Usuario us) {
         try {
             Conexion con = new Conexion();
@@ -121,6 +102,7 @@ public class RegistroUser {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 us.setId(id);
+                
             }
             stmt.close();
             cnx.close();
@@ -137,11 +119,8 @@ public class RegistroUser {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            //Declaro un string donde guardo la QUERY para ejecutar en la BD
             String query = "SELECT * FROM usuario order by id_us";
-            //Defino PreparedStatement
             PreparedStatement stmt = cnx.prepareStatement(query);
-             //ejecuto la consulta
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {                
                 Usuario us = new Usuario();
@@ -162,6 +141,34 @@ public class RegistroUser {
         }
         return listaUsu;
     }
+     
+     //    //VALIDACION DE LOGIN corregir
+//        public boolean accesoLogin(String run, String pass){
+//        Conexion con = new Conexion();
+//        String usuarioCorrecto=null;
+//        String passCorrecto=null;
+//    try {
+//        java.sql.Connection cnx = con.obtenerConexion();
+//        PreparedStatement pst = cnx.prepareStatement("SELECT run_us, pass_us FROM usuario");
+//        ResultSet rs = pst.executeQuery();
+//        
+//            if (rs.next()){
+//                usuarioCorrecto = rs.getString(1);
+//                passCorrecto = rs.getString(2);
+//            }
+//            
+//            if (run.equals(usuarioCorrecto) && pass.equals(passCorrecto)){
+//                JOptionPane.showMessageDialog(null, "Login correcto, Bienvenido");
+//                return true;
+//            } else if (run.equals(usuarioCorrecto)|| pass.equals(passCorrecto)){
+//                JOptionPane.showMessageDialog(null, "Usuario Incorrecto");
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrecta");
+//            return false;
+//        }
+//       return false; 
+//    }
     }
 
 

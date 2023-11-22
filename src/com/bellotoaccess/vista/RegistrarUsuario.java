@@ -206,6 +206,12 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             }
         });
 
+        jtxt_usContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_usContrasenaActionPerformed(evt);
+            }
+        });
+
         jtable_us.setBackground(new java.awt.Color(53, 91, 62));
         jtable_us.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         jtable_us.setForeground(new java.awt.Color(245, 236, 228));
@@ -314,7 +320,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jtxt_usContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(jpanel_usLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_usLayout.createSequentialGroup()
                         .addComponent(jbtn_usEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -423,7 +429,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
     private void jbtn_usAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_usAnadirActionPerformed
                 if (!this.jtxt_usId.getText().isBlank()) {
-                    us=r.buscarPorId(Integer.parseInt(this.jtxt_usId.getText()));}
+                    if (!this.jtxt_usNombre.getText().isBlank()) {
+                        if (!this.jtxt_usContrasena.getText().isBlank()) {
+                        us=r.buscarPorId(Integer.parseInt(this.jtxt_usId.getText()));
                         if (us.getId()==0) {
                         us.setId(Integer.parseInt(this.jtxt_usId.getText()));
                         us.setRun(this.jtxt_usRun.getText());
@@ -438,7 +446,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     }else{
                         JOptionPane.showMessageDialog(rootPane, "Error: este usuario ya existe", "Añadir Usuario", JOptionPane.ERROR_MESSAGE);
                     }
-                       
+                    }else{
+                        JOptionPane.showMessageDialog(rootPane, "Error: Espacio en blanco", "Añadir Usuario", JOptionPane.ERROR_MESSAGE);
+                }  
+            }else{
+                        JOptionPane.showMessageDialog(rootPane, "Error: Espacio en blanco", "Añadir Usuario", JOptionPane.ERROR_MESSAGE);
+                }             
+        }
     }//GEN-LAST:event_jbtn_usAnadirActionPerformed
 
     private void jbtn_usVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_usVolverMouseClicked
@@ -492,43 +506,47 @@ public class RegistrarUsuario extends javax.swing.JFrame {
        mostrarTablaUs();
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    private void jtxt_usContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_usContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_usContrasenaActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegistrarUsuario().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new RegistrarUsuario().setVisible(true);
+//            }
+//        });
+//    }
 private void mostrarTablaUs() {
         //defino variables para rescatar del objeto usuario
         int id;
